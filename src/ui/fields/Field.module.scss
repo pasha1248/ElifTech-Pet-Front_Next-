@@ -1,0 +1,55 @@
+/** @format */
+
+.input {
+  position: relative;
+  display: block;
+  margin-bottom: 9px;
+
+  .icon {
+    position: absolute;
+    left: 20px;
+    bottom: 16px;
+    font-size: 24px;
+    color: whitesmoke;
+  }
+
+  input {
+    border-radius: 10px;
+    padding: 0.8rem 0.5rem;
+    padding-left: 4rem;
+    width: 100%;
+    display: block;
+    outline: 0;
+    color: whitesmoke;
+    border: 2px solid #117dff;
+    z-index: 0;
+    background: transparent;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+
+    &::placeholder {
+      color: whitesmoke;
+    }
+  }
+}
+.errorField {
+  > input {
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    outline: 0;
+    color: white;
+    box-shadow: 0 1px 4px rgb(211, 60, 60);
+    border: 2px solid rgb(201, 110, 110);
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  color: rgb(180, 73, 73);
+  font-size: 0.8rem;
+}

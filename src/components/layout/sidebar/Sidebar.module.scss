@@ -1,0 +1,24 @@
+/** @format */
+
+.sidebar {
+  @apply py-5 px-7;
+  width: 20%;
+  background: #1c1d1f;
+  position: relative;
+
+  .fixed {
+    position: absolute;
+  }
+  .logo {
+    @apply text-2xl font-semibold flex justify-center;
+    color: #ffffff;
+    span {
+      font-size: 40px;
+      color: #f6bd61;
+    }
+  }
+
+  .copy {
+    @apply text-gray-600 text-opacity-60 text-xs;
+  }
+}

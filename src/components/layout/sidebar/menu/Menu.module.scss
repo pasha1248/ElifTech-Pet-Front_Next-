@@ -1,0 +1,59 @@
+/** @format */
+
+.menuSidebar {
+  @apply my-8;
+
+  > ul {
+    @apply list-none;
+
+    > li {
+      @apply mb-7 flex text-gray-500 relative px-4 py-4 rounded-2xl;
+      display: flex;
+      align-items: center;
+      transition: all 0.04s ease-in;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-size: large;
+
+      &:hover {
+        background-color: #d5d5d5;
+        color: #1c1d1f;
+      }
+      &:active {
+        background-color: #ffffff;
+        color: #1c1d1f;
+      }
+
+      // &:last-child {
+      //   @apply mb-0;
+      // }
+
+      > a {
+        // @apply flex text-gray-500 font-medium relative px-4 py-2 rounded-xl;
+        // align-items: center;
+        // transition: all 0.1s ease;
+        // letter-spacing: 2px;
+
+        p {
+          display: flex;
+          align-items: center;
+        }
+        // .active {
+        //   @apply text-white;
+
+        //   > span {
+        //     @apply bg-primary;
+        //   }
+        // }
+
+        // > b {
+        //   @apply font-normal;
+        // }
+
+        // > span.number {
+        //   @apply text-red-500 ml-5;
+        // }
+      }
+    }
+  }
+}

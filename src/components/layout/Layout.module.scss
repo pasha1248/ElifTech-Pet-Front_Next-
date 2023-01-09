@@ -1,0 +1,20 @@
+/** @format */
+
+.main {
+  @apply flex flex-wrap;
+  height: 100vh;
+  background-color: #e3e4e8;
+  backdrop-filter: blur(10px);
+
+  .container {
+    width: 80%;
+
+    .wrapper {
+      @apply pl-6 pr-8;
+    }
+  }
+}
+
+.dark {
+  background-color: #8e8e98;
+}

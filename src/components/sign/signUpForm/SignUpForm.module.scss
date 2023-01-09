@@ -1,0 +1,61 @@
+/** @format */
+
+.container {
+  text-align: center;
+  margin-left: 6rem;
+  margin-right: 6rem;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+
+    margin-bottom: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: whitesmoke;
+
+      a {
+        color: #117dff;
+        cursor: pointer;
+
+        &:hover {
+          color: #81baff;
+        }
+      }
+    }
+  }
+}
+
+.containerForPasswordField {
+  position: relative;
+
+  .eye {
+    .eyeIcon {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: absolute;
+      right: 10px;
+      bottom: 20px;
+      font-size: 30px;
+      color: whitesmoke;
+
+      &:hover {
+        color: grey;
+      }
+    }
+  }
+}

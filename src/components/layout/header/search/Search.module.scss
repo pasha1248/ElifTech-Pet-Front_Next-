@@ -1,0 +1,49 @@
+/** @format */
+
+.search_top {
+  @apply relative w-full px-2;
+
+  .label {
+    @apply block relative;
+
+    .input {
+      @apply py-2 px-8 w-full block outline-0 shadow-md;
+      border-radius: 20px;
+      background-color: #faf8f6;
+      color: #5c5a69;
+      transition: all 0.4s ease;
+
+      &::placeholder {
+        color: #5c5a69;
+      }
+
+      &:focus,
+      &:focus-visible {
+        @apply shadow-2xl;
+        outline: none;
+        border: none;
+      }
+    }
+    .dark {
+      background-color: #1c1d1f;
+    }
+
+    .iconSearch {
+      @apply absolute;
+      top: 9px;
+      left: 3px;
+      color: #5c5a69;
+    }
+  }
+}
+
+.result {
+  @apply rounded-lg flex flex-wrap absolute w-full z-20 p-5 mt-3 bg-gray-900;
+
+  left: 0;
+
+  > div {
+    @apply mr-4 last:mr-0;
+    width: 23%;
+  }
+}
