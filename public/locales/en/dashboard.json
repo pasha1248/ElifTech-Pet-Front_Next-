@@ -1,3 +1,16 @@
 {
-  "menu": "English"
+  "menu": "English",
+  "complexity1": "Beginner",
+  "complexity2": "Intermediate",
+  "complexity3": "Master",
+  "complexityAll": "For everyone",
+  "completed": "Completed",
+  "todoList": "To Do list",
+  "done": "Done",
+  "title": "Title",
+  "addTask": "Add a task",
+  "writeTaskPlaceholder": "Write your assignment here",
+  "close": "Close",
+  "delete": "Delete",
+  "sure?": "Are you sure you want to delete this?"
 }

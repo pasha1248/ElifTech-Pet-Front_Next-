@@ -9,6 +9,9 @@ import { NextPageAuth } from '../../providers/privateRoutes.interface'
 import { api } from '../../state/api-rtk/api-rtk'
 import LayoutForComponent from '../../ui/layout/LayoutForComponent'
 import styles from './Dashboard.module.scss'
+import classaname from 'classnames/index'
+import SpentTime from '../../components/dashboard/charts/SpentTime'
+import Todo from '../../components/dashboard/todo/Todo'
 
 type Props = {}
 
@@ -20,13 +23,12 @@ const DashboardPage: NextPageAuth = (props: Props) => {
     <Layout title='Dashboard'>
       <div className={styles.wrapper}>
         <div>
-          <LayoutForComponent>
-            <Baner />
-          </LayoutForComponent>
-          <LayoutForComponent>
-            <MyCourse />
-            <div> {translate('menu')}</div>
-          </LayoutForComponent>
+          <Baner />
+          <MyCourse />
+        </div>
+        <div>
+          <SpentTime />
+          <Todo />
         </div>
       </div>
     </Layout>

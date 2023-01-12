@@ -7,11 +7,12 @@
     @apply block relative;
 
     .input {
-      @apply py-2 px-8 w-full block outline-0 shadow-md;
+      @apply py-2 px-10 w-full block outline-0 shadow-md;
       border-radius: 20px;
       background-color: #faf8f6;
       color: #5c5a69;
       transition: all 0.4s ease;
+      border: 1px solid transparent;
 
       &::placeholder {
         color: #5c5a69;
@@ -20,8 +21,9 @@
       &:focus,
       &:focus-visible {
         @apply shadow-2xl;
+        border: 1px solid #f6bd61;
+
         outline: none;
-        border: none;
       }
     }
     .dark {
@@ -31,7 +33,7 @@
     .iconSearch {
       @apply absolute;
       top: 9px;
-      left: 3px;
+      left: 9px;
       color: #5c5a69;
     }
   }

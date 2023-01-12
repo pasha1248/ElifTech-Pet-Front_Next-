@@ -10,11 +10,11 @@ export const TypographyStyle = {
     defaultTagName: 'h2',
   },
   h3: {
-    className: 'font-mono font-semibold text-amber-700 text-center',
+    className: ' font-semibold text-amber-700 text-center',
     defaultTagName: 'h3',
   },
   h4: {
-    className: 'text-h4 font-bold text-gray-100	text-center',
+    className: 'text-h4  text-gray-100	text-center',
     defaultTagName: 'h4',
   },
 
@@ -40,5 +40,9 @@ export const TypographyStyle = {
   'Ag-13-medium': {
     className: 'text-Ag-13 font-medium text-gray-100',
     defaultTagName: 'p',
+  },
+  span: {
+    className: 'font-medium text-gray-400',
+    defaultTagName: 'span',
   },
 }

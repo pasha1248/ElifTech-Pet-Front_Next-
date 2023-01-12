@@ -2,11 +2,13 @@
 
 .wrapper {
   position: relative;
+
   .content {
     width: 100%;
     padding: 20px;
     color: #666869;
     position: absolute;
+
     top: 0;
     border-radius: 20px;
     backdrop-filter: blur(10px);

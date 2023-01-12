@@ -32,6 +32,12 @@ export const Typography: React.FC<TypographyProps> = ({
     if (Tag === 'h3' && themeDark) {
       return true
     }
+    if (Tag === 'p' && themeDark) {
+      return true
+    }
+    // if (Tag === 'span' && themeDark) {
+    //   return true
+    // }
     return false
   }
 

@@ -14,27 +14,27 @@ export const menu: IMenuItem[] = [
   {
     title: 'Browse cource',
     icon: MdOutlineScreenSearchDesktop,
-    link: '/trending',
+    link: '/search',
   },
   {
     title: 'My courses',
     icon: HiStar,
-    link: '/my-channel',
+    link: '/my-courses',
   },
   {
     title: 'Messanger',
     icon: AiOutlineMessage,
-    link: '/video-chat',
+    link: '/messager',
   },
   {
     title: 'Analitics',
     icon: HiChartBar,
-    link: '/subscriptions',
+    link: '/analitics',
   },
 
   {
     title: 'Payment',
     icon: MdOutlinePayment,
-    link: '/video-chat',
+    link: '/pay',
   },
 ]
