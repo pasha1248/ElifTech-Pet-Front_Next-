@@ -19,9 +19,18 @@ interface IProps {
   isOpen: boolean
   onOpen?: () => void
   onClose: () => void
+  createNew?: boolean
+  withFrontSide?: boolean
 }
 
-const ChakraModal = ({ children, isOpen, onOpen, onClose }: IProps) => {
+const ChakraModal = ({
+  children,
+  isOpen,
+  onOpen,
+  onClose,
+  createNew = false,
+  withFrontSide,
+}: IProps) => {
   const { themeDark } = useAppSelector(state => state.authSlice)
   const { t } = useTranslation('dashboard')
   return (
@@ -32,8 +41,15 @@ const ChakraModal = ({ children, isOpen, onOpen, onClose }: IProps) => {
           borderRadius={'25px'}
           bgColor={`${!themeDark ? '#FAF8F6' : '#1C1D1F'}`}
         >
-          <ModalHeader></ModalHeader>
-          <ModalCloseButton />
+          {createNew && (
+            <ModalHeader>
+              <Typography type='h3'>{t('titleForCreateTasks')}</Typography>
+            </ModalHeader>
+          )}
+          <ModalCloseButton
+            colorScheme={`${themeDark ? '#FAF8F6' : '#1C1D1F'}`}
+            color={`${themeDark ? '#FAF8F6' : '#1C1D1F'}`}
+          />
           <ModalBody>{children}</ModalBody>
 
           <ModalFooter>

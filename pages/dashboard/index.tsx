@@ -1,6 +1,6 @@
 /** @format */
 
-import DashboardPage from '../../src/screen/dashboard/Dashboard'
+import DashboardPage from '../../src/screen/portal/Dashboard'
 import { NextPageAuth } from '../../src/providers/privateRoutes.interface'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 

@@ -7,6 +7,8 @@ import { Fragment } from 'react'
 // @ts-ignore
 import styles from './Select.module.scss'
 import classNames from 'classnames'
+import { IoIosArrowDown } from 'react-icons/io'
+import { Typography } from '../Typography'
 
 type Props = {
   people: string[] | IFetchDataModleCar[] | any
@@ -24,23 +26,25 @@ export interface IFetchDataModleCar {
   year: number
 }
 
-export const Listbox = (props: Props & UseControllerProps) => {
+export const Listbox = (props: any) => {
   const {
     field: { value, onChange },
   } = useController(props)
 
-  const { people, error, model = false, liters = false, onClick } = props
+  const { people, error, model = false, liters = false, onClick, label } = props
 
   return (
-    <div>
+    <div className='w-full '>
+      <Typography type='Ag-16-medium'>{label}</Typography>
       <ListBox value={value} onChange={onChange}>
         <div
           className={classNames(styles.select, {
             [styles.errorField]: error,
           })}
         >
-          <ListBox.Button className={styles.select2}>
+          <ListBox.Button className={styles.selectButton}>
             {value ? value : 'Selects your'}
+            <IoIosArrowDown size={26} />
           </ListBox.Button>
           <Transition
             as={Fragment}
@@ -48,7 +52,7 @@ export const Listbox = (props: Props & UseControllerProps) => {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <ListBox.Options className='absolute mt-1 z-10 top-14 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
+            <ListBox.Options className='absolute mt-1 z-10 top-10 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
               {people.length !== 0 ? (
                 people.map((person: any) => (
                   <ListBox.Option

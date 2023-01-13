@@ -1,12 +1,18 @@
 /** @format */
 
-import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
+import {
+  CircularProgress,
+  CircularProgressLabel,
+  useDisclosure,
+} from '@chakra-ui/react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
 import LayoutForComponent from '../../../ui/layout/LayoutForComponent'
 import { Typography } from '../../../ui/Typography'
 import TodoItem from './TodoItem'
+import ChakraModal from '../../../ui/modal/ChakraModal'
+import CreateTask from './CreateTask'
 
 interface Props {}
 
@@ -60,6 +66,7 @@ const data = [
 ]
 
 const Todo = (props: Props) => {
+  const { isOpen, onClose, onOpen } = useDisclosure()
   const { t } = useTranslation('dashboard')
   return (
     <div className='w-full '>
@@ -67,7 +74,11 @@ const Todo = (props: Props) => {
         <Typography type='h3' className={'font-2xl'}>
           {t('todoList')}
         </Typography>
+        <ChakraModal isOpen={isOpen} onClose={onClose} createNew>
+          <CreateTask />
+        </ChakraModal>
         <BsFillPlusSquareFill
+          onClick={onOpen}
           size={26}
           color={'#F6BD61'}
           className={'cursor-pointer transition-all	 hover:scale-110	'}

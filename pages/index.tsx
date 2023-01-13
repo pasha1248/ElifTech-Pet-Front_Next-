@@ -47,12 +47,16 @@ const HomePage: NextPage<any> = () => {
   )
 }
 
-export async function getStaticProps({ locale }: any) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'dashboard'])),
-    },
-  }
-}
+// export async function getStaticProps({ locale }: any) {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, [
+//         'common',
+//         'dashboard',
+//         'myCourses',
+//       ])),
+//     },
+//   }
+// }
 
 export default HomePage

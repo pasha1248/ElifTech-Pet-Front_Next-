@@ -9,7 +9,7 @@ import styles from './Todo.module.scss'
 import SmallItem from './todoModal/SmallItem'
 
 interface Props {
-  items: any
+  items?: any
 }
 
 const CreateTask = ({ items }: Props) => {
@@ -35,9 +35,10 @@ const CreateTask = ({ items }: Props) => {
         </div>
         <div className=''>
           <div>
-            {items.map((task: any, id: number) => (
-              <SmallItem key={id} task={task} />
-            ))}
+            {items &&
+              items.map((task: any, id: number) => (
+                <SmallItem key={id} task={task} />
+              ))}
           </div>
 
           <Input

@@ -12,5 +12,6 @@
   "writeTaskPlaceholder": "Write your assignment here",
   "close": "Close",
   "delete": "Delete",
-  "sure?": "Are you sure you want to delete this?"
+  "sure?": "Are you sure you want to delete this?",
+  "titleForCreateTasks": "Create new tasks"
 }
