@@ -4,5 +4,10 @@
   "createCourse": "Create a course",
   "addLesson": "Add lessons",
   "payment": "Payment",
-  "cresteTitlePlaceholder": "Name your course here"
+  "cresteTitlePlaceholder": "Name your course here",
+  "category": "Category",
+  "price": "Price",
+  "selectCategory": "Select a category",
+  "level": "Level",
+  "description": "Dedcription"
 }

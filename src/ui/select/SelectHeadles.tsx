@@ -5,10 +5,13 @@ import { useController, UseControllerProps } from 'react-hook-form'
 import { Listbox as ListBox, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 // @ts-ignore
+
 import styles from './Select.module.scss'
 import classNames from 'classnames'
 import { IoIosArrowDown } from 'react-icons/io'
 import { Typography } from '../Typography'
+import { useTranslation } from 'react-i18next'
+import { useAppSelector } from '../../hooks/useReduxHooks'
 
 type Props = {
   people: string[] | IFetchDataModleCar[] | any
@@ -16,6 +19,7 @@ type Props = {
   onClick?: any
   model?: boolean
   liters?: boolean
+  label?: string
 }
 
 export interface IFetchDataModleCar {
@@ -31,19 +35,25 @@ export const Listbox = (props: any) => {
     field: { value, onChange },
   } = useController(props)
 
+  const { t } = useTranslation('myCourses')
+  const { themeDark } = useAppSelector(state => state.authSlice)
+
   const { people, error, model = false, liters = false, onClick, label } = props
 
   return (
     <div className='w-full '>
-      <Typography type='Ag-16-medium'>{label}</Typography>
       <ListBox value={value} onChange={onChange}>
         <div
           className={classNames(styles.select, {
             [styles.errorField]: error,
           })}
         >
-          <ListBox.Button className={styles.selectButton}>
-            {value ? value : 'Selects your'}
+          <ListBox.Button
+            className={classNames(styles.selectButton, {
+              [styles.dark]: themeDark,
+            })}
+          >
+            {value ? value : t('selectCategory')}
             <IoIosArrowDown size={26} />
           </ListBox.Button>
           <Transition

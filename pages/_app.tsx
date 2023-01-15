@@ -11,8 +11,6 @@ import { TypeComponentAithFields } from '../src/providers/privateRoutes.interfac
 import { ChakraProvider } from '@chakra-ui/react'
 import { appWithTranslation } from 'next-i18next'
 import 'react-toastify/dist/ReactToastify.css'
-import nextI18NextConfig from '../next-i18next.config.js'
-import Lenguage from '../src/providers/Lenguage'
 
 type TypeAppProps = AppProps & TypeComponentAithFields
 

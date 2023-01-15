@@ -17,7 +17,7 @@ const CreateCourse = (props: Props) => {
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['myCourses'])),
+      ...(await serverSideTranslations(locale, ['dashboard', 'myCourses'])),
     },
   }
 }

@@ -4,5 +4,10 @@
   "createCourse": "Створення курсу",
   "addLesson": "Додати уроки",
   "payment": "Oплата",
-  "cresteTitlePlaceholder": "Назва вашого курсу тут"
+  "cresteTitlePlaceholder": "Назва вашого курсу тут",
+  "category": "Категорія",
+  "price": "Ціна",
+  "selectCategory": "Виберіть категорію",
+  "level": "Рівень",
+  "description": "Опис"
 }

@@ -6,6 +6,9 @@ import { useForm } from 'react-hook-form'
 import { Listbox } from '../../../../../ui/select/SelectHeadles'
 import BigInput from './bitInput/BigInput'
 import Selectors from './elementForStep1/Selectors'
+import LabelForField from './elementForStep1/LabelForField'
+import SelectLevel from './elementForStep1/SelectLevel'
+import Description from './elementForStep1/Description'
 
 interface Props {
   defaultValue: any
@@ -37,10 +40,13 @@ const Step1General = ({
       <div>
         <BigInput />
       </div>
-
       <div>
         <Selectors control={control} errors={errors} />
       </div>
+      <div>
+        <SelectLevel />
+      </div>
+      <div>{<Description />}</div>
     </div>
   )
 }

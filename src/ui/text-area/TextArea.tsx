@@ -1,15 +1,26 @@
 /** @format */
 
-import React, { FC, forwardRef, useCallback, useMemo, useState } from 'react'
+import React, {
+  FC,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 // @ts-ignore: next-line
 import styles from './TextArea.module.scss'
 import { ITextArea } from './text-area.interface'
-import SimpleMdeReact from 'react-simplemde-editor'
+import dynamic from 'next/dynamic'
+//import foo from '../foo.js';
+const SimpleMdeReact = dynamic(import('react-simplemde-editor'), { ssr: false })
+
 import 'easymde/dist/easymde.min.css'
 
 const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
   ({ error, style, withEditor, ...rest }, ref) => {
     const [value, setValue] = useState('Initial')
+    const [render, setRender] = useState(false)
 
     const onChange = useCallback((value: string) => {
       setValue(value)
@@ -19,15 +30,21 @@ const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
       return {
         autofocus: true,
         spellChecker: false,
-        // maxHeight: '400px',
+        maxHeight: '400px',
         placeholder: 'text....',
         status: false,
       }
     }, [])
 
+    useEffect((): any => {
+      if (withEditor) {
+        setRender(true)
+      }
+    }, [])
+
     return (
       <div className={styles['editor']} style={style}>
-        {withEditor ? (
+        {render ? (
           <SimpleMdeReact
             className={styles.editorCas}
             options={autofocusNoSpellcheckerOptions}

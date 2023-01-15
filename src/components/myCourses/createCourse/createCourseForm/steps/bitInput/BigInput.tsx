@@ -12,7 +12,7 @@ const BigInput = (props: Props) => {
     <div>
       <input
         type='text '
-        className='text-gray-700 w-full text-3xl rounded-2xl bg-[#F6BD61] p-4 placeholder:text-gray-500 outline-b'
+        className='text-gray-700 w-full text-3xl rounded-2xl bg-[#F6BD61] p-4 placeholder:text-gray-400 outline-b'
         placeholder={`${t('cresteTitlePlaceholder')}`}
       />
     </div>
