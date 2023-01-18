@@ -1,9 +1,16 @@
 /** @format */
 
-import React, { Dispatch, FC, SetStateAction, useCallback } from 'react'
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useCallback,
+  useState,
+} from 'react'
 import { useUploadFile } from '../../hooks/useUploadFile'
 import { useDropzone } from 'react-dropzone'
 import SmallLoader from '../loaders/small-loader/SmallLoader'
+import Cropper from 'react-easy-crop'
 
 export interface IUploadField {
   title?: string
@@ -27,6 +34,11 @@ const FieldUploadFoto: FC<IUploadField> = ({
     setIsChosen
   )
   const handlePhotos = (e: any) => {}
+
+  // @ts-ignore
+  const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
+    console.log(croppedArea, croppedAreaPixels)
+  }, [])
 
   const onDrop = (acceptedFiles: any) => {
     uploadFile(acceptedFiles)

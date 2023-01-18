@@ -1,20 +1,21 @@
 /** @format */
 
-import { Input } from '@chakra-ui/react'
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { Listbox } from '../../../../../ui/select/SelectHeadles'
-import BigInput from './bitInput/BigInput'
-import Selectors from './elementForStep1/Selectors'
-import LabelForField from './elementForStep1/LabelForField'
-import SelectLevel from './elementForStep1/SelectLevel'
-import Description from './elementForStep1/Description'
+import { Input } from '@chakra-ui/react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Listbox } from '../../../../../ui/select/SelectHeadles';
+import BigInput from './bitInput/BigInput';
+import Selectors from './elementForStep1/Selectors';
+import LabelForField from './elementForStep1/LabelForField';
+import SelectLevel from './elementForStep1/SelectLevel';
+import Description from './elementForStep1/Description';
+import UploadPhoto from './elementForStep1/UploadPhoto';
 
 interface Props {
-  defaultValue: any
-  setFields: any
-  increment: any
-  decrement: any
+  defaultValue: any;
+  setFields: any;
+  increment: any;
+  decrement: any;
 }
 
 const Step1General = ({
@@ -33,7 +34,7 @@ const Step1General = ({
   } = useForm<any>({
     mode: 'onChange',
     defaultValues: defaultValue,
-  })
+  });
 
   return (
     <div>
@@ -46,9 +47,14 @@ const Step1General = ({
       <div>
         <SelectLevel />
       </div>
-      <div>{<Description />}</div>
+      <div>
+        <Description />
+      </div>
+      <div>
+        <UploadPhoto />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Step1General
+export default Step1General;

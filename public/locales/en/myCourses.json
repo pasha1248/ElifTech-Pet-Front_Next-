@@ -9,5 +9,7 @@
   "price": "Price",
   "selectCategory": "Select a category",
   "level": "Level",
-  "description": "Dedcription"
+  "description": "Dedcription",
+  "coverPhoto": "Cover photo",
+  "promotionalVideo": "Promotional video"
 }

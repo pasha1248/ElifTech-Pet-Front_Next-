@@ -9,5 +9,7 @@
   "price": "Ціна",
   "selectCategory": "Виберіть категорію",
   "level": "Рівень",
-  "description": "Опис"
+  "description": "Опис",
+  "coverPhoto": "Фото обкладинка",
+  "promotionalVideo": "Рекламний ролик"
 }
