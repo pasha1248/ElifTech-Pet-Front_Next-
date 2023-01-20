@@ -10,7 +10,8 @@ const color = {
   'dark-gray': '1C1D1F',
   gray: '#666869',
   'ligth-gray': '#8E8E98',
-  white: '#F1F1F2',
+  white: '#FAF8F6',
+  'gray-for-chart': 'C3C5C9',
 }
 
 module.exports = {
@@ -19,8 +20,13 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      test: ['DM Sans'],
+    },
     extend: {
       colors: {
+        'ligth-gray': '#8E8E98',
+
         primary: '#FF7652',
         purple: '#6C5ECF',
         'light-blue': '#32A8E2',

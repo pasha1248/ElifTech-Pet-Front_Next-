@@ -1,13 +1,15 @@
 /** @format */
 
 .sidebar {
-  @apply py-5 px-7;
   width: 20%;
   background: #1c1d1f;
-  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  position: sticky;
+  @apply py-5 px-7;
 
   .fixed {
-    position: absolute;
   }
   .logo {
     @apply text-2xl font-semibold flex justify-center;

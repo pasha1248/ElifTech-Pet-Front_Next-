@@ -1,8 +1,11 @@
 /** @format */
 
 .header {
-  @apply relative pt-6 px-6 border-b-stone-500 mb-8;
+  @apply relative pt-6;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 40%;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  gap: 1rem;
   justify-content: space-between;
 }

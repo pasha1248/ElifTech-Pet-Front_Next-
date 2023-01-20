@@ -1,6 +1,6 @@
 /** @format */
 
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import NextProgressBar from 'nextjs-progressbar'
 import { Provider } from 'react-redux'
@@ -11,7 +11,6 @@ import { TypeComponentAithFields } from '../src/providers/privateRoutes.interfac
 import { ChakraProvider } from '@chakra-ui/react'
 import { appWithTranslation } from 'next-i18next'
 import 'react-toastify/dist/ReactToastify.css'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 type TypeAppProps = AppProps & TypeComponentAithFields
 
@@ -19,10 +18,10 @@ function App({ Component, pageProps }: TypeAppProps) {
   return (
     <>
       <NextProgressBar
-        color='#FF7652'
+        color='#F6BD61'
         startPosition={0.3}
         stopDelayMs={200}
-        height={3}
+        height={5}
       />
       <Provider store={store}>
         <AuthProvider Component={Component}>

@@ -4,7 +4,7 @@ import { notifyError } from './../common/notifications/notifications'
 /** @format */
 
 import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
-import { carSelectServise } from '../services/car/carSelect.service'
+import { mediaServise } from '../services/media/mediaServise.service'
 
 export const useUploadFile = (
   onChange: (...event: any) => void,
@@ -16,13 +16,13 @@ export const useUploadFile = (
 
   const uploadCarPhopo = async (formData: FormData) => {
     setLoading(true)
-    const responce = await carSelectServise
+    const responce = await mediaServise
       .upload(formData, folder, setValue)
-      .then(res => {
+      .then((res) => {
         onChange(res.data)
         setLoading(false)
       })
-      .catch(error => {
+      .catch((error) => {
         notifyError('Error')
         setLoading(false)
       })

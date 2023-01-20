@@ -1,0 +1,27 @@
+/** @format */
+
+.item {
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .itemContent {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+  }
+}
+
+.addButton {
+  padding: 10px;
+  border: 2px solid rgb(233, 233, 233);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #d4c7b2;
+  }
+}

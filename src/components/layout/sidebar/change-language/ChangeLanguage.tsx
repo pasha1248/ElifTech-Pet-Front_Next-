@@ -21,6 +21,7 @@ const ChangeLanguage = (props: Props) => {
           className={`${
             locale === l && 'bg-white text-black'
           } text-xl p-2 px-3 rounded-full text-white mr-2`}
+          key={l}
         >
           {l}
         </button>

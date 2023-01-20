@@ -9,7 +9,7 @@ interface Props {}
 const SignIn = (props: Props) => {
   return (
     <div>
-      <Layout title='sign id'>
+      <Layout title='sign id' withSidebar>
         <SignInForm />
       </Layout>
     </div>

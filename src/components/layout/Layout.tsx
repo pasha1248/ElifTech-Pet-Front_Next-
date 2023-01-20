@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({
   withSidebar = true,
   title,
 }) => {
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   return (
     <div>

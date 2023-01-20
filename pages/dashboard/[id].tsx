@@ -1,15 +1,17 @@
 /** @format */
 
-import DashboardPage from '../../src/screen/dashboard/Dashboard'
+import { NextPageAuth } from '../../src/providers/privateRoutes.interface'
+import DashboardPage from '../../src/screen/portal/Dashboard'
 
 interface Props {}
 
-const DashboardProfile = (props: Props) => {
+const DashboardProfile: NextPageAuth = (props: Props) => {
   return (
     <div>
       <DashboardPage />
     </div>
   )
 }
+DashboardProfile.isOnlyUser = true
 
 export default DashboardProfile

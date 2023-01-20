@@ -12,7 +12,12 @@ interface Props {}
 const Baner = (props: Props) => {
   return (
     <div className={styles.wrapper}>
-      <Image src={baner} alt={'baner'} className={'rounded-3xl'} />
+      <Image
+        src={baner}
+        alt={'baner'}
+        className={'rounded-3xl h-[200px]'}
+        priority={true}
+      />
       <div className={styles.content}>
         <Typography type='h2' className='text-2xl font-semibold'>
           Platform for eweryone

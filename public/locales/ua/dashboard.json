@@ -1,3 +1,17 @@
 {
-  "menu": "Меню"
+  "menu": "Меню",
+  "complexity1": "Початківець",
+  "complexity2": "Cередній рівень",
+  "complexity3": "Профі",
+  "complexityAll": "Для всіх",
+  "completed": "Завершено",
+  "todoList": "Список завдань",
+  "done": "Зроблено",
+  "title": "Назва",
+  "addTask": "Додати завдання",
+  "writeTaskPlaceholder": "Пишіть своє завдання тут",
+  "close": "Закрити",
+  "delete": "Видалити",
+  "sure?": "Ви впевнені, що хочете видалити це?",
+  "titleForCreateTasks": "Cтворити нові завдання"
 }

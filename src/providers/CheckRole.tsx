@@ -12,7 +12,7 @@ const CheckRole: FC<PropsWithChildren<TypeComponentAithFields>> = ({
 }) => {
   const { user, isLoading, isAuth } = useAppSelector(state => state.authSlice)
 
-  const { replace, pathname } = useRouter()
+  const { replace, pathname, push } = useRouter()
 
   const Children = () => <>{children}</>
 
@@ -24,7 +24,7 @@ const CheckRole: FC<PropsWithChildren<TypeComponentAithFields>> = ({
     return <Children />
   }
 
-  if (isOnlyUser) pathname !== '/' && replace('/dashboard')
+  if (isOnlyUser) pathname !== '/' && replace('/')
 
   return null
 }

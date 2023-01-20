@@ -23,7 +23,7 @@ export const Typography: React.FC<TypographyProps> = ({
   style,
   onClick,
 }) => {
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const Tag = (tagName ||
     TypographyStyle[type].defaultTagName) as keyof JSX.IntrinsicElements
   const predefinedClassName = TypographyStyle[type].className
@@ -32,6 +32,15 @@ export const Typography: React.FC<TypographyProps> = ({
     if (Tag === 'h3' && themeDark) {
       return true
     }
+    if (Tag === 'p' && themeDark) {
+      return true
+    }
+    if (Tag === 'h2' && themeDark) {
+      return true
+    }
+    // if (Tag === 'span' && themeDark) {
+    //   return true
+    // }
     return false
   }
 

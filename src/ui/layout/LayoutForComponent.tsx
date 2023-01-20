@@ -10,7 +10,7 @@ interface Props {
 }
 
 const LayoutForComponent = ({ children, small = false }: Props) => {
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   return (
     <>

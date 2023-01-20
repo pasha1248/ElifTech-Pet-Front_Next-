@@ -16,7 +16,8 @@ import { api } from '../../../../state/api-rtk/api-rtk'
 type Props = {}
 
 const IconsRight = (props: Props) => {
-  const { isAuth, themeDark } = useAppSelector(state => state.authSlice)
+  const { isAuth } = useAppSelector((state) => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const { data, isLoading } = api.useGetProfileQuery(null)
 
   return (
