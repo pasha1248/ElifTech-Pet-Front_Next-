@@ -36,14 +36,8 @@
   position: relative;
   display: block;
   margin-bottom: 9px;
-  .select2 {
-    border-radius: 10px;
-    width: 100%;
-    display: block;
-    outline: 0;
-    color: white;
-    box-shadow: 0 1px 4px rgb(211, 60, 60);
-    border: 2px solid rgb(201, 110, 110);
+  .selectButton {
+    border: 2px solid #e06262;
   }
 }
 

@@ -10,7 +10,7 @@ import { useAppSelector } from '../../hooks/useReduxHooks'
 interface Props {}
 
 const HeaderForMyCourses = (props: Props) => {
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const { t } = useTranslation('myCourses')
   return (
     <div>

@@ -11,5 +11,19 @@
   "level": "Рівень",
   "description": "Опис",
   "coverPhoto": "Фото обкладинка",
-  "promotionalVideo": "Рекламний ролик"
+  "promotionalVideo": "Рекламний ролик",
+  "nextStep": "Наступний крок",
+  "pleceholderForQuestions": "Для кого цей курс?",
+  "questionsHead": "Питання для замовників",
+  "headAnswer": "Відповідь на питання",
+  "headQuestionName": "Назва запитання",
+  "save": "Зберегти",
+  "addQuestion": "Додати запитання",
+  "back": "Назад",
+  "descriptionOfQuestions": "Опис питань",
+  "choose": "Обрати",
+  "errorForSelect": "Оберіть будь ласка рівень",
+  "eroorMessageForDescription": "Мінімальна кількість символів 60",
+  "addPhoto": "Додайте фото",
+  "addVideo": "Додайте відео"
 }

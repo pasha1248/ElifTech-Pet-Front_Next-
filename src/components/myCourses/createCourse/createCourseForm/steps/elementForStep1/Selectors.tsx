@@ -6,28 +6,27 @@ import { Listbox } from '../../../../../../ui/select/SelectHeadles'
 import { Typography } from '../../../../../../ui/Typography'
 import { RxDotFilled } from 'react-icons/rx'
 import LabelForField from './LabelForField'
+import { useActions } from '../../../../../../hooks/useActions'
+import { useAppSelector } from '../../../../../../hooks/useReduxHooks'
 
 type Props = {
-  control: any
-  errors: any
+  error: boolean
+  category: string
 }
 
-const Selectors = ({ control, errors }: Props) => {
+const Selectors = ({ error, category }: Props) => {
+  const { setCategory } = useActions()
+
   return (
     <div className='flex justify-around gap-3 w-[40%]	'>
       <div className=' flex flex-col w-full'>
         <LabelForField label='category' />
 
         <Listbox
-          control={control}
-          rules={{
-            validate: (value: any) => {
-              return value !== 'Select your'
-            },
-          }}
-          people={[]}
-          error={errors.type}
-          name={''}
+          value={category}
+          onChange={setCategory}
+          items={['UI/UX', 'Java']}
+          error={error}
           label={'category'}
         />
       </div>

@@ -24,7 +24,7 @@ interface IProps {
 
 const ChakraAlertModal = ({ children }: IProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const { t } = useTranslation('dashboard')
 
   const cancelRef = React.useRef<any>()

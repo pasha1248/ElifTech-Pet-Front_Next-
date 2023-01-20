@@ -31,7 +31,7 @@ const ChakraModal = ({
   createNew = false,
   withFrontSide,
 }: IProps) => {
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const { t } = useTranslation('dashboard')
   return (
     <>

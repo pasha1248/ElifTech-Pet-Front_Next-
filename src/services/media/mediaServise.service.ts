@@ -25,7 +25,9 @@ export const mediaServise = {
     })
   },
 
-  async deletePhoto(photo: string, photoUrl: string) {
-    return await api.get(`media?photoId=${photo}&photoUrl=${photoUrl}`)
+  async deletePhoto(type: string, photo: string, photoUrl: string) {
+    return await api.get(
+      `media?type=${type}&photoId=${photo}&photoUrl=${photoUrl}`
+    )
   },
 }

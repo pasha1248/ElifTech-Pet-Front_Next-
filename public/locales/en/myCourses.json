@@ -11,5 +11,19 @@
   "level": "Level",
   "description": "Dedcription",
   "coverPhoto": "Cover photo",
-  "promotionalVideo": "Promotional video"
+  "promotionalVideo": "Promotional video",
+  "nextStep": "Next step",
+  "pleceholderForQuestions": "Who is this course for?",
+  "questionsHead": "Questions for customers",
+  "headAnswer": "Answer to the question",
+  "headQuestionName": "Question name",
+  "save": "Save",
+  "addQuestion": "Add a question",
+  "back": "Back",
+  "descriptionOfQuestions": "Description of questions",
+  "choose": "Choose",
+  "errorForSelect": "Please select a level",
+  "eroorMessageForDescription": "The minimum characters is 60",
+  "addPhoto": "Add a photo",
+  "addVideo": "Add a video"
 }

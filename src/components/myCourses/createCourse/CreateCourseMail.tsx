@@ -6,13 +6,14 @@ import { useMultiForm } from '../../../hooks/useMultiForm'
 import { Typography } from '../../../ui/Typography'
 import ProgressBarForm from './createCourseForm/progressBarForForm/ProgressBarForm'
 import Step1General from './createCourseForm/steps/Step1General'
-import Step2Lessons from './createCourseForm/steps/Step2Lessons'
-import Step3Payment from './createCourseForm/steps/Step3Payment'
+import Step2Questions from './createCourseForm/steps/Step2Questions'
+import Step3Lessons from './createCourseForm/steps/Step3Lessons'
+import Step4Payment from './createCourseForm/steps/Step4Payment'
 
 interface Props {}
 
 const CreateCourseMail = (props: Props) => {
-  const { decrement, increment, page, totalPage, changePage } = useMultiForm(3)
+  const { decrement, increment, page, totalPage, changePage } = useMultiForm(4)
   const [photoId, setPhotoId] = React.useState<string[]>([])
   const { t } = useTranslation('myCourses')
   // const [photoUrl, setPhotoUrl] = React.useState<UploadPhotoRespons[] | any>([])
@@ -36,27 +37,15 @@ const CreateCourseMail = (props: Props) => {
           decrement={decrement}
         />
       )}
-      {/* {page === 2 && (
-        <Step2Lessons
-          defaultValue={fields}
-          setFields={setFields}
-          increment={increment}
-          decrement={decrement}
-        />
+      {page === 2 && (
+        <Step2Questions increment={increment} decrement={decrement} />
       )}
       {page === 3 && (
-        <Step3Payment
-          photoId={photoId}
-          setPhotoId={setPhotoId}
-          photoUrl={photoUrl}
-          setPhotoUrl={setPhotoUrl}
-          defaultValue={fields}
-          clearDefault={setFields}
-          increment={increment}
-          decrement={decrement}
-          changePage={changePage}
-        />
-      )} */}
+        <Step3Lessons increment={increment} decrement={decrement} />
+      )}
+      {page === 4 && (
+        <Step4Payment increment={increment} decrement={decrement} />
+      )}
     </div>
   )
 }

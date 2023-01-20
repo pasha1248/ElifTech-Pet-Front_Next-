@@ -61,7 +61,7 @@ const labels = ['W', 'M', 'T', 'W', 'M', 'T', 'e']
 const SpentTime = () => {
   const { locale } = useRouter()
 
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const data: ChartData<'bar'> = {
     labels: labels,
     datasets: [

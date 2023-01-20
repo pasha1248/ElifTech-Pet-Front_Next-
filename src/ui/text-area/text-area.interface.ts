@@ -8,4 +8,7 @@ type TypeInputPropsField = TextareaHTMLAttributes<HTMLTextAreaElement> &
 
 export interface ITextArea extends TypeInputPropsField {
   withEditor?: boolean
+  description: string
+  onChange: any
+  error: any
 }

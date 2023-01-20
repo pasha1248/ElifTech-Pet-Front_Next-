@@ -1,20 +1,29 @@
 /** @format */
 
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { useActions } from '../../../../../../hooks/useActions'
 import { useAppSelector } from '../../../../../../hooks/useReduxHooks'
 import FieldUploadFoto from '../../../../../../ui/fields/FieldUploadFoto'
 import LayoutForComponent from '../../../../../../ui/layout/LayoutForComponent'
 import LabelForField from './LabelForField'
+import SmallCardForImageVideo from './SmallCardForImageVideo'
+import styles from './Step1.module.scss'
 
-interface Props {}
+interface Props {
+  errorPhoto: boolean
 
-const UploadPhoto = (props: Props) => {
+  errorVideo: boolean
+}
+
+const UploadPhoto = ({ errorPhoto, errorVideo }: Props) => {
   const { percent, uploadDataPhoto, uploadDataVideo } = useAppSelector(
     (state) => state.createCourseSlice
   )
   const { saveUploadDataPhoto, saveUploadDataVideo, uploadPercent } =
     useActions()
+
+  const { t } = useTranslation('myCourses')
 
   return (
     <div
@@ -27,9 +36,7 @@ const UploadPhoto = (props: Props) => {
         <LayoutForComponent>
           <div className='w-[100%]'>
             {uploadDataPhoto.path ? (
-              <div className='rounded-xl'>
-                <img src={uploadDataPhoto.path} alt='photoCreateCourse' />
-              </div>
+              <SmallCardForImageVideo type='photo' file={uploadDataPhoto} />
             ) : (
               <FieldUploadFoto
                 folder='coverPhoto'
@@ -41,17 +48,14 @@ const UploadPhoto = (props: Props) => {
             )}
           </div>
         </LayoutForComponent>
+        {errorPhoto && <div className={styles.error}>{t('addPhoto')}</div>}
       </div>
       <div className='w-[45%]'>
         <LabelForField label='promotionalVideo' />
 
         <LayoutForComponent>
           {uploadDataVideo.path ? (
-            <div className='rounded-xl'>
-              <video width='750' height='500' controls>
-                <source src={uploadDataVideo.path} type='video/mp4' />
-              </video>
-            </div>
+            <SmallCardForImageVideo type='video' file={uploadDataVideo} />
           ) : (
             <div onKeyDown={(e) => console.log(e)}>
               <FieldUploadFoto
@@ -67,6 +71,7 @@ const UploadPhoto = (props: Props) => {
             </div>
           )}
         </LayoutForComponent>
+        {errorVideo && <div className={styles.error}>{t('addVideo')}</div>}
       </div>
     </div>
   )

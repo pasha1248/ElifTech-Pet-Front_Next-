@@ -22,7 +22,7 @@ interface Props {
 
 const ItemCourse = ({ item }: Props) => {
   const { t: translate } = useTranslation('dashboard')
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   return (
     <>

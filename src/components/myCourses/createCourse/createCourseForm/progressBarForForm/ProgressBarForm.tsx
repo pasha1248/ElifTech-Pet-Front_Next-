@@ -5,7 +5,7 @@ import clx from 'classnames'
 // @ts-ignore:next-line
 import styles from './ProgresBarForm.module.scss'
 //
-import { AiFillBook } from 'react-icons/ai'
+import { AiFillBook, AiOutlineQuestionCircle } from 'react-icons/ai'
 import { MdOutlinePlayLesson, MdPayment } from 'react-icons/md'
 import { useMultiForm } from '../../../../../hooks/useMultiForm'
 import { useAppSelector } from '../../../../../hooks/useReduxHooks'
@@ -17,7 +17,7 @@ type Props = {}
 
 const ProgressBarForm: FC<{ page: number }> = ({ page }) => {
   console.log(page)
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const { t } = useTranslation('myCourses')
   const switchPage = () => {
     if (page === 1) {
@@ -28,6 +28,9 @@ const ProgressBarForm: FC<{ page: number }> = ({ page }) => {
     }
     if (page === 3) {
       return styles.step3
+    }
+    if (page === 4) {
+      return styles.step4
     }
   }
 
@@ -44,10 +47,15 @@ const ProgressBarForm: FC<{ page: number }> = ({ page }) => {
           </li>
           <li className={`${page === 1 ? '' : styles.active}`}>
             <span>
+              <AiOutlineQuestionCircle size={30} />
+            </span>
+          </li>
+          <li className={`${page === 3 || (page === 4 && styles.active)}`}>
+            <span>
               <MdOutlinePlayLesson size={30} />
             </span>
           </li>
-          <li className={`${page === 3 && styles.active}`}>
+          <li className={`${page === 4 && styles.active}`}>
             <span>
               <MdPayment size={30} />
             </span>
@@ -56,6 +64,9 @@ const ProgressBarForm: FC<{ page: number }> = ({ page }) => {
         <div className='flex justify-between px-2'>
           <Typography type='Ag-18-semibold'>{t('createCourse')}</Typography>
           <Typography type='Ag-18-semibold' className='mr-8'>
+            {t('descriptionOfQuestions')}
+          </Typography>
+          <Typography type='Ag-18-semibold' className='mr-20'>
             {t('addLesson')}
           </Typography>
           <Typography type='Ag-18-semibold' className='mr-2'>

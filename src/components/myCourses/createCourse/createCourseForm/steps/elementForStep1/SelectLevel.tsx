@@ -5,21 +5,23 @@ import { RadioGroup } from '@headlessui/react'
 import { plans } from '../dataForSteps'
 import LabelForField from './LabelForField'
 import { useTranslation } from 'react-i18next'
+import { useActions } from '../../../../../../hooks/useActions'
 
-const SelectLevel = () => {
-  const [selected, setSelected] = useState()
+const SelectLevel = ({ level, error }: { level: string; error: boolean }) => {
   const { t } = useTranslation('dashboard')
+  const { t: t1 } = useTranslation('myCourses')
+  const { setLevelForm } = useActions()
 
   return (
     <div>
       <LabelForField label='level' />
-      <RadioGroup value={selected} onChange={setSelected}>
+      <RadioGroup value={level} onChange={setLevelForm}>
         <RadioGroup.Label className='sr-only'>Server size</RadioGroup.Label>
         <div className='flex justify-start gap-3	 '>
-          {plans.map(plan => (
+          {plans.map((plan) => (
             <RadioGroup.Option
               key={plan.name}
-              value={plan}
+              value={plan.name}
               className={({ active, checked }) =>
                 `${
                   active
@@ -75,6 +77,11 @@ const SelectLevel = () => {
           ))}
         </div>
       </RadioGroup>
+      {error && (
+        <div className={'bsolute -bottom-5 left-0 w-full text-red-500'}>
+          {t1('errorForSelect')}
+        </div>
+      )}
     </div>
   )
 }

@@ -23,7 +23,7 @@ export const Typography: React.FC<TypographyProps> = ({
   style,
   onClick,
 }) => {
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const Tag = (tagName ||
     TypographyStyle[type].defaultTagName) as keyof JSX.IntrinsicElements
   const predefinedClassName = TypographyStyle[type].className

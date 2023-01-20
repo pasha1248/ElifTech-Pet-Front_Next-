@@ -18,15 +18,11 @@ const initialState: IAuthSlice = {
 export const AuthSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    toggleTheme(state) {
-      state.themeDark = !state.themeDark
-    },
-  },
+  reducers: {},
 
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(signUp.pending, state => {
+      .addCase(signUp.pending, (state) => {
         state.isLoading = true
       })
       .addCase(signUp.fulfilled, (state, action) => {
@@ -54,7 +50,7 @@ export const AuthSlice = createSlice({
       })
     //
     builder
-      .addCase(authWithGoogle.pending, state => {
+      .addCase(authWithGoogle.pending, (state) => {
         state.isLoading = true
       })
       .addCase(authWithGoogle.fulfilled, (state, action) => {
@@ -69,20 +65,20 @@ export const AuthSlice = createSlice({
       })
     //
     builder
-      .addCase(logout.pending, state => {
+      .addCase(logout.pending, (state) => {
         state.isLoading = true
       })
-      .addCase(logout.fulfilled, state => {
+      .addCase(logout.fulfilled, (state) => {
         state.isLoading = false
         state.isAuth = false
         state.user = null
       })
-      .addCase(logout.rejected, state => {
+      .addCase(logout.rejected, (state) => {
         state.isLoading = false
       })
     //
     builder
-      .addCase(checkAuth.pending, state => {
+      .addCase(checkAuth.pending, (state) => {
         state.isLoading = true
       })
       .addCase(checkAuth.fulfilled, (state, action) => {
@@ -90,13 +86,13 @@ export const AuthSlice = createSlice({
         state.user = action.payload?.user
         state.isAuth = true
       })
-      .addCase(checkAuth.rejected, state => {
+      .addCase(checkAuth.rejected, (state) => {
         state.isLoading = false
         state.isAuth = false
       })
   },
 })
 
-export const { toggleTheme } = AuthSlice.actions
+export const {} = AuthSlice.actions
 
 export default AuthSlice.reducer

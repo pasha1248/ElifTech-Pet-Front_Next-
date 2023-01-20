@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { api } from './api-rtk/api-rtk'
 import { rtkQueryErrorLogger } from './middlewares/error.middleware'
 import AuthSlice from './slice/auth-slice/auth.slice'
+import changeThemeSlice from './slice/change-theme/change-theme.slice'
 import createCourseSlice from './slice/create-course/create-couse.slice'
 import forgotPasswordSlice from './slice/forgot-password/forgot.slice'
 import messengerSlice from './slice/messanger/messenger.slice'
@@ -15,12 +16,13 @@ export const store = configureStore({
     WebsocketSlice: websocketSlice,
     createCourseSlice: createCourseSlice,
     MessengerSlice: messengerSlice,
+    changeThemeSlice: changeThemeSlice,
     authSlice: AuthSlice,
     forgotPasswordSlice,
     [api.reducerPath]: api.reducer,
     userSlice: userSlice,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(rtkQueryErrorLogger).concat(api.middleware),
 })
 

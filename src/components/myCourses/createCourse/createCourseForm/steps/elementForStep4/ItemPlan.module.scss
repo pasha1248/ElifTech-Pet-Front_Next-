@@ -1,0 +1,24 @@
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  border-radius: 23px;
+  justify-content: center;
+  padding: 40px;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+
+  .list {
+    margin: 10px 0 10px 0;
+    display: flex;
+  }
+  .icon {
+    color: #f6bd61;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .list {
+    display: flex;
+  }
+}

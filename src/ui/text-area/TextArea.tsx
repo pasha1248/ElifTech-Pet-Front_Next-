@@ -12,18 +12,23 @@ import React, {
 import styles from './TextArea.module.scss'
 import { ITextArea } from './text-area.interface'
 import dynamic from 'next/dynamic'
+import cn from 'classnames'
 //import foo from '../foo.js';
 const SimpleMdeReact = dynamic(import('react-simplemde-editor'), { ssr: false })
 
 import 'easymde/dist/easymde.min.css'
+import { useTranslation } from 'react-i18next'
 
 const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
-  ({ error, style, withEditor, ...rest }, ref) => {
-    const [value, setValue] = useState('Initial')
+  ({ error, style, onChange, withEditor, description, ...rest }, ref) => {
+    const [value, setValue] = useState(description)
     const [render, setRender] = useState(false)
 
-    const onChange = useCallback((value: string) => {
+    const { t } = useTranslation('myCourses')
+
+    const handleChange = useCallback((value: string) => {
       setValue(value)
+      onChange(value)
     }, [])
 
     const autofocusNoSpellcheckerOptions = useMemo(() => {
@@ -41,20 +46,21 @@ const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
         setRender(true)
       }
     }, [])
+    console.log(error)
 
     return (
       <div className={styles['editor']} style={style}>
         {render ? (
           <SimpleMdeReact
-            className={styles.editorCas}
+            className={error ? styles.errorBorder : styles.editorCas}
             options={autofocusNoSpellcheckerOptions}
             value={value}
-            onChange={onChange}
+            onChange={handleChange}
           />
         ) : (
           <textarea ref={ref} {...rest} />
         )}
-        {error && <div className={styles.error}>{error.message}</div>}
+        {error && <div className={styles.error}>{t(error)}</div>}
       </div>
     )
   }

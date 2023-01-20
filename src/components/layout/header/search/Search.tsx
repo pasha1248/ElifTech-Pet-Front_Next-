@@ -10,7 +10,7 @@ import cn from 'classnames'
 
 const Search: FC = () => {
   const { data, handleSearch, searchTerm, isSuccess } = useSearch()
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   console.log(data)
   return (

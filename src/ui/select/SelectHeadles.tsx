@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../hooks/useReduxHooks'
 
 type Props = {
-  people: string[] | IFetchDataModleCar[] | any
+  items: string[] | IFetchDataModleCar[] | any
   error?: any
   onClick?: any
   model?: boolean
@@ -31,14 +31,12 @@ export interface IFetchDataModleCar {
 }
 
 export const Listbox = (props: any) => {
-  const {
-    field: { value, onChange },
-  } = useController(props)
-
   const { t } = useTranslation('myCourses')
-  const { themeDark } = useAppSelector(state => state.authSlice)
+  const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
-  const { people, error, model = false, liters = false, onClick, label } = props
+  const { items, error, value, onChange, onClick, label } = props
+  console.log(error)
+  console.log(value)
 
   return (
     <div className='w-full '>
@@ -63,19 +61,19 @@ export const Listbox = (props: any) => {
             leaveTo='opacity-0'
           >
             <ListBox.Options className='absolute mt-1 z-10 top-10 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
-              {people.length !== 0 ? (
-                people.map((person: any) => (
+              {items.length !== 0 ? (
+                items.map((item: any) => (
                   <ListBox.Option
-                    key={person}
-                    value={person}
+                    key={item}
+                    value={item}
                     className={({ active }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
                         active ? 'bg-blue-400 text-white' : 'text-gray-900'
                       }`
                     }
-                    onClick={() => onClick && onClick(person)}
+                    onClick={() => onClick && onClick(item)}
                   >
-                    {`${person} ${liters ? 'liters' : ''}  `}
+                    {`${item} `}
                   </ListBox.Option>
                 ))
               ) : (

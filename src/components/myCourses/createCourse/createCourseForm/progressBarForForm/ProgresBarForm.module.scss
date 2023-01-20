@@ -41,9 +41,12 @@
     width: 0%;
   }
   ul.step2::after {
-    width: 50%;
+    width: 35%;
   }
   ul.step3::after {
+    width: 65%;
+  }
+  ul.step4::after {
     width: 100%;
   }
   /* ul.step-3::before{
