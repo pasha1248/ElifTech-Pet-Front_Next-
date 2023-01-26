@@ -12,6 +12,7 @@ export interface ICreateCourse {
   level: string
   description: string
   percent: any
+  plan: string
   questions: { id: number; title: string; answer: string; save: boolean }[]
 }
 
@@ -20,6 +21,7 @@ const initialState: ICreateCourse = {
   category: '',
   level: '',
   description: '',
+  plan: '',
   uploadDataPhoto: [],
   uploadDataVideo: [],
   percent: 0,

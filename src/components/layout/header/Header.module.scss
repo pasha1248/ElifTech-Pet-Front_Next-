@@ -8,4 +8,13 @@
   padding-right: 2rem;
   gap: 1rem;
   justify-content: space-between;
+
+  .burger {
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.5s ease;
+  }
+  .burger:active {
+    transform: scale(1.1);
+  }
 }

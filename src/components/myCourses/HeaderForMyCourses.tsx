@@ -14,6 +14,17 @@ const HeaderForMyCourses = (props: Props) => {
   const { t } = useTranslation('myCourses')
   return (
     <div>
+      <div>
+        <Button
+          colorScheme={`${themeDark ? 'orange' : 'orange'}`}
+          _hover={{ backgroundColor: 'gray.100' }}
+          variant='outline'
+          rightIcon={<AiOutlinePlus />}
+        >
+          {t('clreateCourseButton')}
+        </Button>
+      </div>
+
       <Link href={'my-courses/create-course'}>
         <Button
           colorScheme={`${themeDark ? 'orange' : 'orange'}`}

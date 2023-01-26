@@ -17,7 +17,7 @@ import { checkAuth } from '../src/state/slice/auth-slice/auth.actions'
 const inter = Inter({ subsets: ['latin'] })
 
 const HomePage: NextPage<any> = () => {
-  const { isAuth } = useAppSelector(state => state.authSlice)
+  const { isAuth } = useAppSelector((state) => state.authSlice)
   const { checkAuth } = useActions()
 
   const { locale, locales, push } = useRouter()
@@ -47,16 +47,16 @@ const HomePage: NextPage<any> = () => {
   )
 }
 
-// export async function getStaticProps({ locale }: any) {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, [
-//         'common',
-//         'dashboard',
-//         'myCourses',
-//       ])),
-//     },
-//   }
-// }
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'dashboard',
+        'myCourses',
+      ])),
+    },
+  }
+}
 
 export default HomePage

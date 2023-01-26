@@ -7,6 +7,7 @@ import * as chatActions from './slice/messanger/messenger.actions'
 import * as createCourseActios from './slice/create-course/create-course.actions'
 import { createCourseSlice } from './slice/create-course/create-couse.slice'
 import { changeThemeSlice } from './slice/change-theme/change-theme.slice'
+import { changeBurgerSlice } from './slice/burger/burger.slice'
 
 export const rootAction = {
   ...authActions,
@@ -16,4 +17,5 @@ export const rootAction = {
   ...createCourseSlice.actions,
   ...createCourseActios,
   ...changeThemeSlice.actions,
+  ...changeBurgerSlice.actions,
 }

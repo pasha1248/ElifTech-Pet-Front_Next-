@@ -7,15 +7,32 @@ import { Button } from '@chakra-ui/react'
 import LayoutForComponent from '../../../../../../ui/layout/LayoutForComponent'
 import { Typography } from '../../../../../../ui/Typography'
 import { useTranslation } from 'react-i18next'
+import { useActions } from '../../../../../../hooks/useActions'
+import { useAppSelector } from '../../../../../../hooks/useReduxHooks'
 
 type Props = {
   typePrices: IPricePlan
   ua?: boolean
   en?: boolean
+  push: (arg: string) => Promise<boolean>
 }
 
-const ItemPlan = ({ typePrices, en = false, ua = false }: Props) => {
+const ItemPlan = ({ push, typePrices, en = false, ua = false }: Props) => {
   const { t } = useTranslation('myCourses')
+
+  const {
+    category,
+    description,
+    level,
+    name,
+    percent,
+    plan,
+    questions,
+    uploadDataPhoto,
+    uploadDataVideo,
+  } = useAppSelector((state) => state.createCourseSlice)
+
+  const { createNewCourse } = useActions()
   const changeCurrency = () => {
     if (en) {
       return 'USD'
@@ -24,6 +41,22 @@ const ItemPlan = ({ typePrices, en = false, ua = false }: Props) => {
       return 'UAH'
     }
   }
+
+  const createCourse = (plan: string) => {
+    const data = {
+      category,
+      description,
+      level,
+      name,
+      plan: plan,
+      uploadDataPhoto: uploadDataPhoto.path,
+      uploadDataVideo: uploadDataVideo.path,
+      questions,
+    }
+
+    createNewCourse({ data, push })
+  }
+
   return (
     <div>
       <LayoutForComponent>
@@ -58,7 +91,12 @@ const ItemPlan = ({ typePrices, en = false, ua = false }: Props) => {
           </div>
 
           <div className='flex justify-center mt-8'>
-            <Button colorScheme={'yellow'}>{t('choose')}</Button>
+            <Button
+              onClick={() => createCourse(typePrices.title)}
+              colorScheme={'yellow'}
+            >
+              {t('choose')}
+            </Button>
           </div>
         </div>
       </LayoutForComponent>

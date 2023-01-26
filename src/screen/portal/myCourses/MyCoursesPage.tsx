@@ -14,6 +14,7 @@ const MyCoursesPage = (props: Props) => {
         <div>
           <HeaderForMyCourses />
         </div>
+        <div></div>
       </Layout>
     </div>
   )

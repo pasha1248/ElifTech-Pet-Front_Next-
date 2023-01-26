@@ -3,7 +3,6 @@
 import React from 'react'
 import TextArea from '../../../../../../ui/text-area/TextArea'
 import LabelForField from './LabelForField'
-import dynamic from 'next/dynamic'
 import LayoutForComponent from '../../../../../../ui/layout/LayoutForComponent'
 import { useActions } from '../../../../../../hooks/useActions'
 
