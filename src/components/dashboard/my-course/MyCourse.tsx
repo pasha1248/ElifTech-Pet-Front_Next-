@@ -17,7 +17,7 @@ export interface ICourse {
   progress: number
 }
 
-const Item: ICourse[] = [
+export const Item: ICourse[] = [
   {
     id: 1,
     name: 'Makeup',

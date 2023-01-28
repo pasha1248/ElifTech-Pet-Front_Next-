@@ -1,0 +1,22 @@
+{
+  "owerview": "Огляд",
+  "courseContent": "Контент курсу",
+  "requirements": "Вимоги",
+  "instructors": "Інструктори",
+  "students": "Студентів",
+  "complexity1": "Початківець",
+  "complexity2": "Cередній рівень",
+  "complexity3": "Профі",
+  "complexityAll": "Для всіх",
+  "instructorRating": "Рейтинг інструктора",
+  "courses": "Курсів",
+  "courseRating": "Рейтинг курсу",
+  "openAll": "відкрити весь",
+  "rating": "Рейтинг",
+  "ratings": "oцінок",
+  "showAllReviews": "Показати всі відгуки",
+  "questions": "Запитання?",
+  "showMore": "Показати більше",
+  "addToCart": "Додати в кошик",
+  "buyNow": "Купити зараз"
+}

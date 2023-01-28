@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 1rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 25% 55% 3% 14%;
+  gap: 1rem;
+
+  &:nth-child(1) {
+    align-items: center;
+  }
+}

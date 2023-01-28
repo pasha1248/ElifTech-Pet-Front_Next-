@@ -7,15 +7,25 @@ import { AppRoute } from '../../../common/enums/app-routes.enum'
 import styles from './Header.module.scss'
 import IconsRight from './icons-right/IconsRight'
 import Search from './search/Search'
+import { GrMenu } from 'react-icons/gr'
 
-type Props = {}
+type Props = {
+  toogle: () => void
+}
 
-const Header: FC = (props: Props) => {
+const Header: FC<Props> = (props) => {
   return (
-    <header className={styles.header}>
-      <Search />
-      <IconsRight />
-    </header>
+    <div>
+      <header className={styles.header}>
+        <div className='flex items-start'>
+          <div onClick={props.toogle} className={styles.burger}>
+            <GrMenu size={27} />
+          </div>
+          <Search />
+        </div>
+        <IconsRight />
+      </header>
+    </div>
   )
 }
 

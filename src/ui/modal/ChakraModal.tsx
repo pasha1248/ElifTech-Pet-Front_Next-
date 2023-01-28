@@ -21,11 +21,13 @@ interface IProps {
   onClose: () => void
   createNew?: boolean
   withFrontSide?: boolean
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | '2xl' | '3xl'
 }
 
 const ChakraModal = ({
   children,
   isOpen,
+  size = 'lg',
   onOpen,
   onClose,
   createNew = false,
@@ -35,7 +37,12 @@ const ChakraModal = ({
   const { t } = useTranslation('dashboard')
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose} motionPreset='slideInRight'>
+      <Modal
+        size={size}
+        isOpen={isOpen}
+        onClose={onClose}
+        motionPreset='slideInRight'
+      >
         <ModalOverlay />
         <ModalContent
           borderRadius={'25px'}

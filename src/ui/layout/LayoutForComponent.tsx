@@ -7,9 +7,10 @@ import cn from 'classnames'
 interface Props {
   children: React.ReactNode
   small?: boolean
+  className?: ''
 }
 
-const LayoutForComponent = ({ children, small = false }: Props) => {
+const LayoutForComponent = ({ children, small = false, className }: Props) => {
   const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   return (

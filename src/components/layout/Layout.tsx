@@ -8,6 +8,8 @@ import styles from './Layout.module.scss'
 import Sidebar from './sidebar/Sidebar'
 import cn from 'classnames'
 import { useAppSelector } from '../../hooks/useReduxHooks'
+import { useOpenBurger } from './hooks/useOpenBurger'
+import { useActions } from '../../hooks/useActions'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -23,6 +25,8 @@ export const Layout: React.FC<LayoutProps> = ({
   title,
 }) => {
   const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
+  const { openBurger } = useAppSelector((state) => state.changeBurgerSlice)
+  const { toggleSidebar } = useActions()
 
   return (
     <div>
@@ -30,10 +34,12 @@ export const Layout: React.FC<LayoutProps> = ({
         <title>{title}</title>
       </Head>
       <div className={cn(styles.main, { [styles.dark]: themeDark })}>
-        {withSidebar && <Sidebar />}
+        {withSidebar && (
+          <Sidebar initialState={openBurger} close={close} open={open} />
+        )}
 
-        <section className={styles.container}>
-          <Header />
+        <section className={!openBurger ? styles.container : styles.close}>
+          <Header toogle={toggleSidebar} />
           <div className={`${styles.wrapper} p-2`}>{children}</div>
           {/* {withFooter && <Footer />} */}
         </section>

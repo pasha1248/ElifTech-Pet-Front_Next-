@@ -15,7 +15,7 @@ const ChangeLanguage = (props: Props) => {
   return (
     <div>
       {' '}
-      {locales?.map(l => (
+      {locales?.map((l) => (
         <button
           onClick={() => handle(l)}
           className={`${

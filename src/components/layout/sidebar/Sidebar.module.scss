@@ -7,7 +7,35 @@
   left: 0;
   height: 100vh;
   position: sticky;
-  @apply py-5 px-7;
+  @apply py-5 px-6;
+  transition: all 0.3s ease;
+
+  .fixed {
+  }
+  .logo {
+    @apply text-2xl font-semibold flex justify-center;
+    color: #ffffff;
+    span {
+      font-size: 40px;
+      color: #f6bd61;
+    }
+  }
+
+  .copy {
+    @apply text-gray-600 text-opacity-60 text-xs;
+  }
+}
+
+.sidebarClose {
+  transition: all 0.3s ease;
+
+  width: 7%;
+  background: #1c1d1f;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  position: sticky;
+  @apply py-5 px-6;
 
   .fixed {
   }

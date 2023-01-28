@@ -12,11 +12,11 @@ const PaymentPlans = (props: Props) => {
     <div className='flex gap-3'>
       {locale === 'ua' &&
         infoForPaymantUa.map((el) => (
-          <ItemPlan typePrices={el} ua key={el.title} />
+          <ItemPlan push={push} typePrices={el} ua key={el.title} />
         ))}
       {locale === 'en' &&
         infoForPaymantEn.map((el) => (
-          <ItemPlan typePrices={el} en key={el.title} />
+          <ItemPlan push={push} typePrices={el} en key={el.title} />
         ))}
     </div>
   )
