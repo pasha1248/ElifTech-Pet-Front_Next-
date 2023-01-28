@@ -13,7 +13,10 @@
   "courseRating": "Course rating",
   "openAll": "open all",
   "rating": "Rating",
-  "ratings": "rating",
+  "ratings": "ratings",
   "showAllReviews": "Show all reviews",
-  "questions": "Questions?"
+  "questions": "Questions?",
+  "showMore": "Show more",
+  "addToCart": "Add to cart",
+  "buyNow": "Buy now"
 }

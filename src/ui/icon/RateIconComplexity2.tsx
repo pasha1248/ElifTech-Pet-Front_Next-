@@ -5,14 +5,16 @@ import { IconContext } from 'react-icons'
 import { AiFillSignal } from 'react-icons/ai'
 
 interface Props {
-  type: string
+  type?: string
+  width?: string
+  height?: string
 }
 
-const RateIconComplexity2 = () => {
+const RateIconComplexity2 = ({ width = '20', height = '20' }: Props) => {
   console.log('')
   return (
     <div>
-      <svg width='20' height='20'>
+      <svg width={width} height={height}>
         <defs>
           <linearGradient id='myGradient' gradientTransform=''>
             <>

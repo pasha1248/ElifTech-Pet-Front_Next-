@@ -8,6 +8,8 @@ import * as createCourseActios from './slice/create-course/create-course.actions
 import { createCourseSlice } from './slice/create-course/create-couse.slice'
 import { changeThemeSlice } from './slice/change-theme/change-theme.slice'
 import { changeBurgerSlice } from './slice/burger/burger.slice'
+import { currencySlice } from './slice/currency/currency.slice'
+import { cartSlice } from './slice/cart/cart.slice'
 
 export const rootAction = {
   ...authActions,
@@ -18,4 +20,6 @@ export const rootAction = {
   ...createCourseActios,
   ...changeThemeSlice.actions,
   ...changeBurgerSlice.actions,
+  ...currencySlice.actions,
+  ...cartSlice.actions,
 }

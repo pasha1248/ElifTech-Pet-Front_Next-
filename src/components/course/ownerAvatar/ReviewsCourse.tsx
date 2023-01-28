@@ -7,6 +7,7 @@ import LayoutForComponent from '../../../ui/layout/LayoutForComponent'
 import ChakraModal from '../../../ui/modal/ChakraModal'
 import { Typography } from '../../../ui/Typography'
 import ItemReviews from './reviews/ItemReviews'
+import ModalForAllReviews from './reviews/ModalForAllReviews'
 
 type Props = {}
 
@@ -56,19 +57,22 @@ const ReviewsCourse = (props: Props) => {
   return (
     <div>
       <LayoutForComponent>
-        <div className='flex gap-3 items-center pt-2 pb-4'>
+        <div className='flex gap-3 items-center pl-2 pt-2 '>
           <Typography type='Ag-18-semibold'>{t('rating')}</Typography>
           <FaStar size={30} className={'text-yellow-500'} />
-          {'5'}
+          <Typography type='Ag-18-semibold'> {'5'}</Typography>
+
           <BsDashLg
             size={30}
             className={'text-yellow-500'}
             style={{ transform: 'rotate(90deg)' }}
           />
-          134
-          <Typography type='Ag-18-semibold'>{t('ratings')}</Typography>
+          <Typography type='Ag-18-semibold'>
+            {'123  '}
+            {t('ratings')}
+          </Typography>
         </div>
-        <div className='flex flex-wrap gap-0.25'>
+        <div className='flex p-3 flex-wrap gap-0.3 w-full'>
           {data.map((el) => (
             <ItemReviews user={el} />
           ))}
@@ -80,7 +84,9 @@ const ReviewsCourse = (props: Props) => {
           </Button>
         </div>
       </LayoutForComponent>
-      <ChakraModal isOpen={isOpen} onClose={onClose}></ChakraModal>
+      <ChakraModal size='3xl' isOpen={isOpen} onClose={onClose}>
+        <ModalForAllReviews data={data} />
+      </ChakraModal>
     </div>
   )
 }
