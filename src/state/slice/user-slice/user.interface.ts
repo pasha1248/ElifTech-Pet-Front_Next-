@@ -1,9 +1,10 @@
 /** @format */
 
+import { ICourse } from '../../../components/dashboard/my-course/MyCourse'
 import { IBase } from '../base.interface'
 
 export interface IUser extends IBase {
-  articles: IArticle[] | []
+  courses: ICourse[]
   avatarPath: string
   cars: [] | any
   description: string

@@ -6,15 +6,22 @@ import { Typography } from '../../../ui/Typography'
 import ItemCourse from './ItemCourse'
 import styles from './MyCourse.module.scss'
 import UserAvatar from '../../user.avatar/UserAvatar'
+import { IBase } from '../../../state/slice/base.interface'
+import { IUser } from '../../../state/slice/user-slice/user.interface'
+import { api } from '../../../state/api-rtk/api-rtk'
 
-export interface ICourse {
-  id: number
-  category: string
+export interface ICourse extends IBase {
+  id: string
+
   name: string
-  imgItem: string
-  userAvatar: string
-  complexity: string
-  progress: number
+  category: string
+  description: string
+  level: string
+  plan: string
+  uploadDataPhoto: string
+  uploadDataVideo: string
+  user: IUser
+  progres?: number
 }
 
 export const Item: ICourse[] = [
@@ -56,6 +63,8 @@ export const Item: ICourse[] = [
 ]
 
 const MyCourse = () => {
+  const { data, isLoading } = api.useGetProfileQuery(null)
+
   return (
     <div>
       <div className='flex justify-between items-center mt-4'>
@@ -65,11 +74,12 @@ const MyCourse = () => {
         <Typography type='h2'>All course</Typography>
       </div>
       <div className='flex '>
-        {Item.map((item: ICourse) => (
-          <LayoutForComponent key={item.id} small>
-            <ItemCourse item={item} />
-          </LayoutForComponent>
-        ))}
+        {data &&
+          data.courses.map((item: ICourse) => (
+            <LayoutForComponent key={item.id} small>
+              <ItemCourse item={item} />
+            </LayoutForComponent>
+          ))}
       </div>
     </div>
   )

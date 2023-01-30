@@ -11,8 +11,8 @@ import style from './Sidebar.module.scss'
 
 interface Props {
   initialState: boolean
-  open: () => void
-  close: () => void
+  open?: () => void
+  close?: () => void
 }
 
 const Sidebar: FC<Props> = ({ initialState, open, close }) => {

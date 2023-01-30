@@ -13,13 +13,13 @@ export const api = createApi({
     credentials: 'include',
   }),
 
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getProfile: builder.query<IUser, any>({
       query: () => `${'user'}/profile`,
       providesTags: () => [{ type: 'Profile' }],
     }),
     subscribeToUser: builder.mutation<boolean, string>({
-      query: channelId => ({
+      query: (channelId) => ({
         url: `${'user'}/subscribe/${channelId}`,
         method: 'PATCH',
       }),

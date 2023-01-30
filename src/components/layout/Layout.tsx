@@ -34,12 +34,10 @@ export const Layout: React.FC<LayoutProps> = ({
         <title>{title}</title>
       </Head>
       <div className={cn(styles.main, { [styles.dark]: themeDark })}>
-        {withSidebar && (
-          <Sidebar initialState={openBurger} close={close} open={open} />
-        )}
+        {withSidebar && <Sidebar initialState={openBurger} />}
 
         <section className={!openBurger ? styles.container : styles.close}>
-          <Header toogle={toggleSidebar} />
+          <Header toogle={() => toggleSidebar()} />
           <div className={`${styles.wrapper} p-2`}>{children}</div>
           {/* {withFooter && <Footer />} */}
         </section>

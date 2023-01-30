@@ -6,6 +6,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { useAppSelector } from '../../hooks/useReduxHooks'
+import MyCourseItems from './courseItems/MyCourseItems'
 
 interface Props {}
 
@@ -15,26 +16,17 @@ const HeaderForMyCourses = (props: Props) => {
   return (
     <div>
       <div>
-        <Button
-          colorScheme={`${themeDark ? 'orange' : 'orange'}`}
-          _hover={{ backgroundColor: 'gray.100' }}
-          variant='outline'
-          rightIcon={<AiOutlinePlus />}
-        >
-          {t('clreateCourseButton')}
-        </Button>
+        <Link href={'my-courses/create-course'}>
+          <Button
+            colorScheme={`${themeDark ? 'orange' : 'orange'}`}
+            _hover={{ backgroundColor: 'gray.100' }}
+            variant='outline'
+            rightIcon={<AiOutlinePlus />}
+          >
+            {t('clreateCourseButton')}
+          </Button>
+        </Link>
       </div>
-
-      <Link href={'my-courses/create-course'}>
-        <Button
-          colorScheme={`${themeDark ? 'orange' : 'orange'}`}
-          _hover={{ backgroundColor: 'gray.100' }}
-          variant='outline'
-          rightIcon={<AiOutlinePlus />}
-        >
-          {t('clreateCourseButton')}
-        </Button>
-      </Link>
     </div>
   )
 }

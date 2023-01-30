@@ -4,17 +4,24 @@ import React from 'react'
 import { Layout } from '../../../components/layout/Layout'
 import { title } from 'process'
 import HeaderForMyCourses from '../../../components/myCourses/HeaderForMyCourses'
+import MyCourseItems from '../../../components/myCourses/courseItems/MyCourseItems'
 
-interface Props {}
+interface Props {
+  courses?: any
+}
 
-const MyCoursesPage = (props: Props) => {
+const MyCoursesPage = ({ courses }: Props) => {
   return (
     <div>
       <Layout title='My course'>
-        <div>
+        <div className='mb-5'>
           <HeaderForMyCourses />
         </div>
-        <div></div>
+        <div>
+          <div>
+            <MyCourseItems courses={courses} />
+          </div>
+        </div>
       </Layout>
     </div>
   )

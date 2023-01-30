@@ -34,19 +34,23 @@ const ItemCourse = ({ item, forDashboard, withRating }: Props) => {
       <Link href={AppRoute.COURSE + item.id}>
         <div>
           <div className='relative'>
-            <img src={item.imgItem} alt='' className='rounded-3xl' />
+            {item.uploadDataPhoto ? (
+              <img src={item.uploadDataPhoto} alt='' className='rounded-2xl' />
+            ) : (
+              <img src={'/image/mockCoursePreview.svg'} alt='next' />
+            )}
             <div
               className={`absolute bottom-1 left-2 flex w-min justify-center	 gap-2 items-center p-1 px-2 ${
                 !themeDark ? 'bg-gray-100' : 'bg-[#1C1D1F]'
               } rounded-3xl`}
             >
               <Typography type='Ag-13-medium' className='text-sm font-bold'>
-                {translate(item.complexity)}
+                {translate(item.level)}
               </Typography>
               <div>
-                {item.complexity === 'complexity1' && <RateIconComplexity1 />}
-                {item.complexity === 'complexity3' && <RateIconComplexity3 />}
-                {item.complexity === 'complexity2' && <RateIconComplexity2 />}
+                {item.level === 'complexity1' && <RateIconComplexity1 />}
+                {item.level === 'complexity3' && <RateIconComplexity3 />}
+                {item.level === 'complexity2' && <RateIconComplexity2 />}
               </div>
             </div>
           </div>
@@ -57,23 +61,28 @@ const ItemCourse = ({ item, forDashboard, withRating }: Props) => {
                   {item.name}
                 </Typography>
                 <Typography type='span' className={'text-xs text-gray-400'}>
-                  {item.name}
+                  {item.category}
                 </Typography>
               </div>
               {/* <UserAvatar user={} /> */}
-              <img src={item.userAvatar} alt={item.userAvatar} width={50} />
+              <img
+                src={item.user.avatarPath}
+                alt={item.user.avatarPath}
+                style={{ borderRadius: '50%' }}
+                width={50}
+              />
             </div>
             {forDashboard && (
               <div>
                 <Progress
-                  value={item.progress}
+                  value={item.progres}
                   colorScheme={'yellow'}
                   isAnimated
                   borderRadius={'2xl'}
                 />
                 <div>
                   <Typography type='span' className='text-xs text-gray-300'>
-                    {translate('completed')}: {item.progress}%
+                    {translate('completed')}: {item.progres}%
                   </Typography>
                 </div>
               </div>
