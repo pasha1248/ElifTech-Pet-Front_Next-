@@ -75,7 +75,7 @@ const MyCourse = () => {
       </div>
       <div className='flex '>
         {data &&
-          data.courses.map((item: ICourse) => (
+          data.availableCourses.map((item: ICourse) => (
             <LayoutForComponent key={item.id} small>
               <ItemCourse item={item} />
             </LayoutForComponent>

@@ -3,21 +3,28 @@
 import { useAppSelector } from '../../hooks/useReduxHooks'
 import styles from './LayoutForComponent.module.scss'
 import cn from 'classnames'
+import classNames from 'classnames'
 
 interface Props {
   children: React.ReactNode
   small?: boolean
-  className?: ''
+  classNames?: string
 }
 
-const LayoutForComponent = ({ children, small = false, className }: Props) => {
+const LayoutForComponent = ({ children, small = false, classNames }: Props) => {
   const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   return (
     <>
       {!small ? (
-        <div className={cn(styles.wrapper, { [styles.dark]: themeDark })}>
-          {children}
+        <div className={classNames}>
+          <div
+            className={cn(styles.wrapper, {
+              [styles.dark]: themeDark,
+            })}
+          >
+            {children}
+          </div>
         </div>
       ) : (
         <div className={cn(styles.wrapper2, { [styles.dark2]: themeDark })}>

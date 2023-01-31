@@ -25,5 +25,8 @@
   "errorForSelect": "Please select a level",
   "eroorMessageForDescription": "The minimum characters is 60",
   "addPhoto": "Add a photo",
-  "addVideo": "Add a video"
+  "addVideo": "Add a video",
+  "created": "Created",
+  "available": "Available",
+  "active": "Active"
 }

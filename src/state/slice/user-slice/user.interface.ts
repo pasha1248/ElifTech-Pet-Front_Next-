@@ -4,7 +4,8 @@ import { ICourse } from '../../../components/dashboard/my-course/MyCourse'
 import { IBase } from '../base.interface'
 
 export interface IUser extends IBase {
-  courses: ICourse[]
+  createdCourses: ICourse[]
+  availableCourses: ICourse[]
   avatarPath: string
   cars: [] | any
   description: string

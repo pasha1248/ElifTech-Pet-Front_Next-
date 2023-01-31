@@ -25,5 +25,8 @@
   "errorForSelect": "Оберіть будь ласка рівень",
   "eroorMessageForDescription": "Мінімальна кількість символів 60",
   "addPhoto": "Додайте фото",
-  "addVideo": "Додайте відео"
+  "addVideo": "Додайте відео",
+  "created": "Створені",
+  "available": "Доступні",
+  "active": "Активні"
 }
