@@ -9,6 +9,9 @@ import UserAvatar from '../../user.avatar/UserAvatar'
 import { IBase } from '../../../state/slice/base.interface'
 import { IUser } from '../../../state/slice/user-slice/user.interface'
 import { api } from '../../../state/api-rtk/api-rtk'
+import Carousel from '../../../ui/carousel/Carousel'
+import { CarouselCustom } from '../../../ui/carousel/CarouselCustom'
+import ChakraCarouselMain from '../../../ui/carousel/chakraCarousel'
 
 export interface ICourse extends IBase {
   id: string
@@ -37,7 +40,7 @@ export const Item: ICourse[] = [
     progress: 30,
   },
   {
-    id: 2,
+    id: '2',
 
     name: 'Makeup',
     category: 'Beauty',
@@ -49,7 +52,7 @@ export const Item: ICourse[] = [
     progress: 10,
   },
   {
-    id: 3,
+    id: '3',
 
     name: 'Makeup',
     category: 'Beauty',
@@ -73,14 +76,8 @@ const MyCourse = () => {
         </Typography>
         <Typography type='h2'>All course</Typography>
       </div>
-      <div className='flex '>
-        {data &&
-          data.availableCourses.map((item: ICourse) => (
-            <LayoutForComponent key={item.id} small>
-              <ItemCourse item={item} />
-            </LayoutForComponent>
-          ))}
-      </div>
+      <div className='flex '></div>
+      <div>{data && <ChakraCarouselMain data={data} />}</div>
     </div>
   )
 }

@@ -11,6 +11,7 @@ import { TypeComponentAithFields } from '../src/providers/privateRoutes.interfac
 import { ChakraProvider } from '@chakra-ui/react'
 import { appWithTranslation } from 'next-i18next'
 import 'react-toastify/dist/ReactToastify.css'
+import '../src/ui/carousel/CarouselCustom.scss'
 
 type TypeAppProps = AppProps & TypeComponentAithFields
 

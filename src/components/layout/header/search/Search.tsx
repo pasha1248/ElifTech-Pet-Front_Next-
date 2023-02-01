@@ -7,6 +7,7 @@ import { BiSearchAlt } from 'react-icons/bi'
 import { useSearch } from '../../../../hooks/useSearch'
 import { useAppSelector } from '../../../../hooks/useReduxHooks'
 import cn from 'classnames'
+import SmallVideoItem from './smallIcon/SmallArticleItem'
 
 const Search: FC = () => {
   const { data, handleSearch, searchTerm, isSuccess } = useSearch()
@@ -31,13 +32,11 @@ const Search: FC = () => {
       </label>
       {isSuccess && (
         <div className={styles.result}>
-          {/* {data?.length ? (
-            data.map(item => (
-              // <SmallVideoItem isSmall item={item} key={item.id} />
-            ))
+          {data?.length ? (
+            data.map((item) => <SmallVideoItem item={item} key={item.id} />)
           ) : (
             <div className='text-white'>Article is not found</div>
-          )} */}
+          )}
         </div>
       )}
     </div>
