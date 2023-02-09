@@ -21,7 +21,21 @@ interface IProps {
   onClose: () => void
   createNew?: boolean
   withFrontSide?: boolean
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | '2xl' | '3xl'
+  ligthColorTheme?: string
+  blackColorTheme?: string
+
+  size?:
+    | 'xs'
+    | 'sm'
+    | 'md'
+    | 'lg'
+    | 'xl'
+    | 'full'
+    | '2xl'
+    | '3xl'
+    | '4xl'
+    | '5xl'
+    | '6xl'
 }
 
 const ChakraModal = ({
@@ -30,11 +44,16 @@ const ChakraModal = ({
   size = 'lg',
   onOpen,
   onClose,
+  blackColorTheme = '#1C1D1F',
+  ligthColorTheme = '#FAF8F6',
   createNew = false,
   withFrontSide,
 }: IProps) => {
   const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
   const { t } = useTranslation('dashboard')
+
+  let lightColor = ligthColorTheme
+  let blackColor = blackColorTheme
   return (
     <>
       <Modal
@@ -42,11 +61,12 @@ const ChakraModal = ({
         isOpen={isOpen}
         onClose={onClose}
         motionPreset='slideInRight'
+        isCentered
       >
         <ModalOverlay />
         <ModalContent
           borderRadius={'25px'}
-          bgColor={`${!themeDark ? '#FAF8F6' : '#1C1D1F'}`}
+          bgColor={`${!themeDark ? lightColor : blackColor}`}
         >
           {createNew && (
             <ModalHeader>
@@ -58,10 +78,6 @@ const ChakraModal = ({
             color={`${themeDark ? '#FAF8F6' : '#1C1D1F'}`}
           />
           <ModalBody>{children}</ModalBody>
-
-          <ModalFooter>
-            <Typography type='Ag-18-semibold'>{t('close')}</Typography>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

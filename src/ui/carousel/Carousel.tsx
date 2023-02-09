@@ -12,7 +12,11 @@ const Carousel = ({ items = [...Array(3)] }: Props) => {
       <div id='default-carousel' className='relative' data-carousel='static'>
         <div className='relative h-56 overflow-hidden rounded-lg md:h-96'>
           {items.map((el) => (
-            <div className='hidden duration-700 ease-in-out' data-carousel-item>
+            <div
+              key={el.id}
+              className='hidden duration-700 ease-in-out'
+              data-carousel-item
+            >
               <div className='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
                 {/* <ItemCourse item={el} /> */}
                 div hello

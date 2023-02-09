@@ -11,4 +11,5 @@ export interface ITextArea extends TypeInputPropsField {
   description: string
   onChange: any
   error: any
+  long?: boolean
 }

@@ -16,6 +16,8 @@ const Baner = (props: Props) => {
         src={baner}
         alt={'baner'}
         className={'rounded-3xl h-[200px]'}
+        height={100}
+        width={100}
         priority={true}
       />
       <div className={styles.content}>

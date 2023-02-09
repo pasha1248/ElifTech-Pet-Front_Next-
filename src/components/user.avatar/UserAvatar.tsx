@@ -10,6 +10,7 @@ import { IUser } from '../../state/slice/user-slice/user.interface'
 import { useAppSelector } from '../../hooks/useReduxHooks'
 import Link from 'next/link'
 import { Typography } from '../../ui/Typography'
+import Image from 'next/image'
 
 const UserAvatar: FC<{
   user?: IUser | any
@@ -39,10 +40,11 @@ const UserAvatar: FC<{
     <Link href={`/my-profile/${user && user.id}`}>
       <div className='flex items-center gap-2'>
         <span className={cn(styles.avatar, { [styles.white]: isWhite })}>
-          <img
+          <Image
             width={45}
             height={45}
             alt={user && user.firstName}
+            loader={(src) => user.avatarPath}
             src={user && user.avatarPath}
           />
           {user && user.firstName && (

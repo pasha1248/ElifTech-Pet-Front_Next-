@@ -19,7 +19,7 @@ const FormForQuestions = (props: Props) => {
       <LabelForField label='questionsHead' />
 
       {questions.map((el) => (
-        <div className='mt-6'>
+        <div className='mt-6' key={el.id}>
           <ItemForQuestions
             id={el.id}
             title={el.title}

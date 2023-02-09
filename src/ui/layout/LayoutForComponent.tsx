@@ -9,9 +9,15 @@ interface Props {
   children: React.ReactNode
   small?: boolean
   classNames?: string
+  style?: React.CSSProperties
 }
 
-const LayoutForComponent = ({ children, small = false, classNames }: Props) => {
+const LayoutForComponent = ({
+  children,
+  small = false,
+  classNames,
+  style,
+}: Props) => {
   const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   return (
@@ -22,6 +28,7 @@ const LayoutForComponent = ({ children, small = false, classNames }: Props) => {
             className={cn(styles.wrapper, {
               [styles.dark]: themeDark,
             })}
+            style={style}
           >
             {children}
           </div>

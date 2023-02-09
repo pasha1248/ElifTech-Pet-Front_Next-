@@ -18,18 +18,24 @@ const SimpleMdeReact = dynamic(import('react-simplemde-editor'), { ssr: false })
 
 import 'easymde/dist/easymde.min.css'
 import { useTranslation } from 'react-i18next'
+import { useAppSelector } from '../../hooks/useReduxHooks'
 
 const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
-  ({ error, style, onChange, withEditor, description, ...rest }, ref) => {
+  ({ error, style, onChange, long, withEditor, description, ...rest }, ref) => {
     const [value, setValue] = useState(description)
     const [render, setRender] = useState(false)
 
+    const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
+
     const { t } = useTranslation('myCourses')
 
-    const handleChange = useCallback((value: string) => {
-      setValue(value)
-      onChange(value)
-    }, [])
+    const handleChange = useCallback(
+      (value: string) => {
+        setValue(value)
+        onChange(value)
+      },
+      [value, onChange]
+    )
 
     const autofocusNoSpellcheckerOptions = useMemo(() => {
       return {
@@ -45,14 +51,16 @@ const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
       if (withEditor) {
         setRender(true)
       }
-    }, [])
-    console.log(error)
+    }, [withEditor])
 
     return (
       <div className={styles['editor']} style={style}>
         {render ? (
           <SimpleMdeReact
-            className={error ? styles.errorBorder : styles.editorCas}
+            className={cn(error ? styles.errorBorder : styles.editorCas, {
+              [styles.dark]: themeDark,
+              [styles.longVersion]: long,
+            })}
             options={autofocusNoSpellcheckerOptions}
             value={value}
             onChange={handleChange}
@@ -65,4 +73,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
     )
   }
 )
+
+TextArea.displayName = 'TextArea'
 export default TextArea

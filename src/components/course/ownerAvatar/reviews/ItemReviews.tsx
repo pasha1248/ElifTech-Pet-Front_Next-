@@ -3,6 +3,7 @@ import RatingStars from '../../../../ui/rating/RatingStars'
 import { Typography } from '../../../../ui/Typography'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { useTranslation } from 'react-i18next'
+import Image from 'next/image'
 
 type Props = {
   user: any
@@ -15,7 +16,7 @@ const ItemReviews = ({ user, openFully }: Props) => {
   return (
     <div className={`${openFully ? 'mb-4' : 'w-[50%] '} my-3 p-1`}>
       <div className='flex justify-between'>
-        <img
+        <Image
           className='rounded-full'
           width={70}
           height={70}

@@ -5,6 +5,7 @@ enum AppRoute {
   MY_COURSES = '/my-courses',
   COURSE = '/course/',
   CART = '/cart',
+  ADD_LESSON = '/add-lessons/',
 }
 
 export { AppRoute }

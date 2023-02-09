@@ -6,7 +6,7 @@ import className from 'classnames'
 //@ts-ignore
 import styles from './Field.module.scss'
 
-const Field = forwardRef<HTMLInputElement, IField>(
+const Field = forwardRef<HTMLInputElement, any>(
   ({ error, children, type = 'text', style, ...rest }: any, ref) => {
     return (
       <div
@@ -20,4 +20,6 @@ const Field = forwardRef<HTMLInputElement, IField>(
     )
   }
 )
+
+Field.displayName = 'Field'
 export default Field

@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  grid-template-columns: 59% 40%;
+  gap: 1rem;
+  padding: 20px;
+  .leftSide {
+  }
+
+  .rightSide {
+  }
+}
+
+.input {
+  input {
+    @apply py-2 px-10 w-full block outline-0 shadow-md;
+    border-radius: 20px;
+    background-color: #faf8f6;
+    color: #5c5a69;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+
+    &::placeholder {
+      color: #5c5a69;
+    }
+
+    &:focus,
+    &:focus-visible {
+      @apply shadow-2xl;
+      border: 1px solid #f6bd61;
+
+      outline: none;
+    }
+  }
+}
+
+.dark {
+  input {
+    background-color: #5c5a69;
+    color: #faf8f6;
+
+    &::placeholder {
+      color: #9c9c9c;
+    }
+  }
+}

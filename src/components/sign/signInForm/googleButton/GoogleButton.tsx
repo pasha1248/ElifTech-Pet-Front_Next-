@@ -12,9 +12,12 @@ const GoogleButton = (props: any) => {
   const { authWithGoogle } = useActions()
   const { push } = useRouter()
 
-  const googleAuth = useCallback((token: any) => {
-    authWithGoogle([token, push])
-  }, [])
+  const googleAuth = useCallback(
+    (token: any) => {
+      authWithGoogle([token, push])
+    },
+    [authWithGoogle,push]
+  )
 
   return (
     <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -22,7 +25,7 @@ const GoogleButton = (props: any) => {
         clientId={`${process.env.NEXT_PUBLIC_API_GOOGLE_ID}`}
       >
         <GoogleLogin
-          onSuccess={credentialResponse => {
+          onSuccess={(credentialResponse) => {
             googleAuth(credentialResponse.credential)
             push(AppRoute.HOME)
           }}

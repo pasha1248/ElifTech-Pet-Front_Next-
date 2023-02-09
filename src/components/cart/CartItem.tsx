@@ -7,9 +7,10 @@ import { ICourse } from '../dashboard/my-course/MyCourse'
 import { FaTrashAlt } from 'react-icons/fa'
 import ComplexityIcon from '../../ui/icon/copmlexity/ComplexityIcon'
 import styles from './Cart.module.scss'
+import Image from 'next/image'
 
 type Props = {
-  item: ICourse
+  item: any
 }
 
 const CartItem = ({ item }: Props) => {
@@ -19,12 +20,13 @@ const CartItem = ({ item }: Props) => {
       <LayoutForComponent>
         <div>
           <div className={styles.item}>
-            <img
+            <Image
+              loader={(src) => item.imgItem}
               src={item.imgItem}
               alt={item.complexity}
               className={'rounded-2xl '}
-
-              // width={'40%'}
+              width={'100'}
+              height={'100'}
             />
             <div className='flex flex-col'>
               <Typography type='h3' className=' text-start'>

@@ -28,5 +28,12 @@
   "addVideo": "Додайте відео",
   "created": "Створені",
   "available": "Доступні",
-  "active": "Активні"
+  "active": "Активні",
+  "complexity1": "Початківець",
+  "complexity2": "Cередній рівень",
+  "complexity3": "Профі",
+  "complexityAll": "Для всіх",
+  "lessonName": "Назва уроку",
+  "videoFromYouTube": "Відео з YouTube",
+  "notNecessarily": "не обов'язково"
 }

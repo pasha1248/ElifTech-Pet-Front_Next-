@@ -11,9 +11,9 @@ import SmallCardForImageVideo from './SmallCardForImageVideo'
 import styles from './Step1.module.scss'
 
 interface Props {
-  errorPhoto: boolean
+  errorPhoto?: boolean
 
-  errorVideo: boolean
+  errorVideo?: boolean
 }
 
 const UploadPhoto = ({ errorPhoto, errorVideo }: Props) => {
@@ -27,10 +27,10 @@ const UploadPhoto = ({ errorPhoto, errorVideo }: Props) => {
 
   return (
     <div
-      className='flex justify-around
+      className='flex justify-between
     	w-full'
     >
-      <div className='w-[45%]'>
+      <div className='w-[50%]'>
         <LabelForField label='coverPhoto' />
 
         <LayoutForComponent>
@@ -50,7 +50,7 @@ const UploadPhoto = ({ errorPhoto, errorVideo }: Props) => {
         </LayoutForComponent>
         {errorPhoto && <div className={styles.error}>{t('addPhoto')}</div>}
       </div>
-      <div className='w-[45%]'>
+      <div className='w-[50%]'>
         <LabelForField label='promotionalVideo' />
 
         <LayoutForComponent>

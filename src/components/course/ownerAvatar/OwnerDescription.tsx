@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaStar, FaUsers, FaPlayCircle } from 'react-icons/fa'
@@ -11,7 +12,7 @@ const OwnerDescription = (props: Props) => {
   return (
     <div>
       <div className='flex gap-2'>
-        <img
+        <Image
           src='https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png'
           alt=''
           className='rounded-full'

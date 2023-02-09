@@ -1,5 +1,6 @@
 /** @format */
 
+import Image from 'next/image'
 import React from 'react'
 import { useActions } from '../../../../../../hooks/useActions'
 
@@ -33,7 +34,14 @@ const SmallCardForImageVideo: React.FC<Props> = ({ file, type = 'photo' }) => {
         onMouseOut={() => setOpenButtons(false)}
       >
         {type === 'photo' ? (
-          <img src={file.path} key={file.id} alt={file.id} />
+          <Image
+            width={100}
+            height={100}
+            loader={(src) => file.path}
+            src={file.path}
+            key={file.id}
+            alt={file.id}
+          />
         ) : (
           <div>
             <video width='1280' height='1020' className='rounded-xl' controls>

@@ -1,6 +1,7 @@
 /** @format */
 
 import { Progress } from '@chakra-ui/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
@@ -35,9 +36,22 @@ const ItemCourse = ({ item, forDashboard, withRating }: Props) => {
         <div>
           <div className='relative'>
             {item.uploadDataPhoto ? (
-              <img src={item.uploadDataPhoto} alt='' className='rounded-2xl' />
+              <Image
+                loader={(src) => item.uploadDataPhoto}
+                src={item.uploadDataPhoto}
+                alt=''
+                className='rounded-2xl'
+                height={100}
+                width={100}
+              />
             ) : (
-              <img src={'/image/mockCoursePreview.svg'} alt='next' />
+              <Image
+                loader={(src) => '/image/mockCoursePreview.svg'}
+                src={'/image/mockCoursePreview.svg'}
+                alt='next'
+                height={100}
+                width={100}
+              />
             )}
             <div
               className={`absolute bottom-1 left-2 flex w-min justify-center	 gap-2 items-center p-1 px-2 ${
@@ -65,11 +79,12 @@ const ItemCourse = ({ item, forDashboard, withRating }: Props) => {
                 </Typography>
               </div>
               {/* <UserAvatar user={} /> */}
-              <img
+              <Image
                 src={item.user.avatarPath}
                 alt={item.user.avatarPath}
                 style={{ borderRadius: '50%' }}
                 width={50}
+                height={50}
               />
             </div>
             {forDashboard && (

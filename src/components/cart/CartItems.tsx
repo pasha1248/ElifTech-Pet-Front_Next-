@@ -1,5 +1,4 @@
 import React from 'react'
-import { Item } from '../dashboard/my-course/MyCourse'
 import CartItem from './CartItem'
 import styles from './Cart.module.scss'
 import TotalPriceForm from './TotalPriceForm'
@@ -10,9 +9,9 @@ const CartItems = (props: Props) => {
   return (
     <div className={styles.container}>
       <div>
-        {Item.map((el) => (
-          <CartItem item={el} />
-        ))}
+        {/* {Item.map((el) => (
+          <CartItem item={el} key={el.id} />
+        ))} */}
       </div>
       <div>
         <TotalPriceForm />

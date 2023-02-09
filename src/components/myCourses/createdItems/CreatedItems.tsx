@@ -10,8 +10,8 @@ const CreatedItems = (props: Props) => {
 
   return (
     <div className={styles.container}>
-      {data?.createdCourses.map((el) => (
-        <div>
+      {data?.createdCourses.map((el, id) => (
+        <div key={el.id + id}>
           <ItemWithControl course={el} />
         </div>
       ))}

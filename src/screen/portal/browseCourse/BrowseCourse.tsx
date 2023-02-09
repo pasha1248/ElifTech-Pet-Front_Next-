@@ -1,7 +1,7 @@
 import React from 'react'
 import SaerchHeader from '../../../components/browseCourses/searchHeader/SaerchHeader'
 import ItemCourse from '../../../components/dashboard/my-course/ItemCourse'
-import { ICourse, Item } from '../../../components/dashboard/my-course/MyCourse'
+import { ICourse } from '../../../components/dashboard/my-course/MyCourse'
 import { Layout } from '../../../components/layout/Layout'
 import LayoutForComponent from '../../../ui/layout/LayoutForComponent'
 import styles from './BrowseCourse.module.scss'

@@ -27,7 +27,6 @@
       }
     }
     .dark {
-      background-color: #1c1d1f;
     }
 
     .iconSearch {
@@ -40,12 +39,24 @@
 }
 
 .result {
-  @apply rounded-lg flex flex-wrap absolute w-full z-20 p-5 mt-3 bg-gray-900;
+  background-color: #1c1d1f;
+  position: absolute;
+  border-radius: 20px;
+  z-index: 30;
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+  padding: 10px;
+  margin-top: 5px;
+  width: 98%;
+  border: 4px solid #f6bd61;
 
-  left: 0;
-
-  > div {
-    @apply mr-4 last:mr-0;
-    width: 23%;
+  .item {
+    width: 200px;
+    height: 100%;
   }
+}
+.dark {
+  background-color: #faf8f6;
+  border: 4px solid #f6bd61;
 }

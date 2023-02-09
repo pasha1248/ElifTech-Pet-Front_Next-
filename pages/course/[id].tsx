@@ -11,7 +11,6 @@ const CoursePageMain: NextPageAuth = (props: Props) => {
   return (
     <div>
       <Head>
-        <link rel='stylesheet' href='path/to/plyr.css' />
       </Head>
       <CoursePage />
     </div>

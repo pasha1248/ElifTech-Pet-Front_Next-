@@ -27,44 +27,6 @@ export interface ICourse extends IBase {
   progres?: number
 }
 
-export const Item: ICourse[] = [
-  {
-    id: 1,
-    name: 'Makeup',
-    category: 'Beauty',
-    imgItem:
-      'https://barebeauty.ie/wp-content/uploads/2021/04/BareBeautyBackground-1-1024x576-1.jpg',
-    userAvatar:
-      'https://www.focusedu.org/wp-content/uploads/2018/12/circled-user-male-skin-type-1-2.png',
-    complexity: 'complexity1',
-    progress: 30,
-  },
-  {
-    id: '2',
-
-    name: 'Makeup',
-    category: 'Beauty',
-    imgItem:
-      'https://barebeauty.ie/wp-content/uploads/2021/04/BareBeautyBackground-1-1024x576-1.jpg',
-    userAvatar:
-      'https://www.focusedu.org/wp-content/uploads/2018/12/circled-user-male-skin-type-1-2.png',
-    complexity: 'complexity2',
-    progress: 10,
-  },
-  {
-    id: '3',
-
-    name: 'Makeup',
-    category: 'Beauty',
-    imgItem:
-      'https://barebeauty.ie/wp-content/uploads/2021/04/BareBeautyBackground-1-1024x576-1.jpg',
-    userAvatar:
-      'https://www.focusedu.org/wp-content/uploads/2018/12/circled-user-male-skin-type-1-2.png',
-    complexity: 'complexity3',
-    progress: 90,
-  },
-]
-
 const MyCourse = () => {
   const { data, isLoading } = api.useGetProfileQuery(null)
 

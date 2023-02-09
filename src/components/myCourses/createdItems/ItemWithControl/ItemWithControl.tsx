@@ -15,6 +15,8 @@ import { AppRoute } from '../../../layout/sidebar/menu/menu.enum'
 import { FaPen, FaTrash } from 'react-icons/fa'
 import { SiGoogleanalytics } from 'react-icons/si'
 import styles from '../CreatedItems.module.scss'
+import Image from 'next/image'
+import { Button } from '@chakra-ui/react'
 
 type Props = {
   course: ICourse
@@ -30,13 +32,20 @@ const ItemWithControl = ({ course }: Props) => {
           <div>
             <div className='relative'>
               {course.uploadDataPhoto ? (
-                <img
+                <Image
                   src={course.uploadDataPhoto}
+                  loader={(src) => course.uploadDataPhoto}
                   alt=''
                   className='rounded-2xl'
+                  fill
                 />
               ) : (
-                <img src={'/image/mockCoursePreview.svg'} alt='next' />
+                <Image
+                  src={'/image/mockCoursePreview.svg'}
+                  alt='next'
+                  height={300}
+                  width={300}
+                />
               )}
               <div
                 className={`absolute bottom-1 left-2 flex w-min justify-center	 gap-2 items-center p-1 px-2 ${
@@ -70,10 +79,18 @@ const ItemWithControl = ({ course }: Props) => {
             <RatingStars rate={3} />
           </div>
         </Link>
+
         <div className={styles.controlIcon}>
           <FaPen className={styles.icon} />
           <SiGoogleanalytics className={styles.icon2} />
           <FaTrash className={styles.icon3} />
+        </div>
+        <div className='p-2'>
+          <Link href={AppRoute.MY_COURSES + AppRoute.ADD_LESSON + course.id}>
+            <Button width={'full'} colorScheme={'yellow'}>
+              {t('addLesson')}
+            </Button>
+          </Link>
         </div>
       </LayoutForComponent>
     </div>

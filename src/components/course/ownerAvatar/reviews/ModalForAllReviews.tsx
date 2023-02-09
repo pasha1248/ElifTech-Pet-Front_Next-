@@ -20,7 +20,7 @@ const ModalForAllReviews = ({ data }: Props) => {
         </div>
         <div className=''>
           {data.map((el: any) => (
-            <ItemReviews openFully user={el} />
+            <ItemReviews openFully user={el} key={el.id} />
           ))}
         </div>
       </div>

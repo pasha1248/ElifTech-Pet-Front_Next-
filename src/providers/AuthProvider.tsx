@@ -21,7 +21,7 @@ const AuthProvider: FC<PropsWithChildren<TypeComponentAithFields>> = ({
       console.log('refresh')
       checkAuth()
     }
-  }, [])
+  }, [checkAuth])
 
   return !isOnlyUser ? (
     <>{children}</>

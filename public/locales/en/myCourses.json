@@ -28,5 +28,12 @@
   "addVideo": "Add a video",
   "created": "Created",
   "available": "Available",
-  "active": "Active"
+  "active": "Active",
+  "complexity1": "Beginner",
+  "complexity2": "Intermediate",
+  "complexity3": "Master",
+  "complexityAll": "For everyone",
+  "lessonName": "Lesson name",
+  "videoFromYouTube": "Video from YouTube",
+  "notNecessarily": "not necessarily"
 }

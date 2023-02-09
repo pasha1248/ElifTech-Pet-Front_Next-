@@ -1,19 +1,21 @@
 /** @format */
 
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
-import { EMAIL_RULE } from '../../../common/const/Regex'
-import { AppRoute } from '../../../common/enums/app-routes.enum'
-import { useActions } from '../../../hooks/useActions'
-import Field from '../../../ui/fields/Field'
-import { Layout } from '../../layout/Layout'
+import { EMAIL_RULE } from '../../../../common/const/Regex'
+import { useActions } from '../../../../hooks/useActions'
+import Field from '../../../../ui/fields/Field'
+import { Layout } from '../../../layout/Layout'
+import { AppRoute } from '../../../layout/sidebar/menu/menu.enum'
+
 import { IForgotPassword } from '../auth.interface'
 // @ts-ignore
 import styles from '../SignInForm.module.scss'
 
 const ForgotPassword = () => {
-  const navigate = useNavigate()
+  const { push } = useRouter()
   const {
     register,
     handleSubmit,
@@ -23,16 +25,16 @@ const ForgotPassword = () => {
 
   const { checkEmailAndSendCode } = useActions()
 
-  const onSubmit: SubmitHandler<IForgotPassword> = async data => {
+  const onSubmit: SubmitHandler<IForgotPassword> = async (data) => {
     try {
-      checkEmailAndSendCode([data, navigate])
+      checkEmailAndSendCode([data, push])
     } catch (e) {
       console.log(e)
     }
   }
 
   return (
-    <Layout>
+    <div>
       <div className={styles.container}>
         <h2>Forgot password</h2>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -50,12 +52,12 @@ const ForgotPassword = () => {
             })}
           />
           <div className={styles.forgotButtons}>
-            <Link to={AppRoute.HOME}>Back</Link>
+            <Link href={AppRoute.HOME}>Back</Link>
             <button>Send code</button>
           </div>
         </form>
       </div>
-    </Layout>
+    </div>
   )
 }
 

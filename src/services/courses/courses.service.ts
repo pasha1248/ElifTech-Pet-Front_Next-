@@ -22,4 +22,14 @@ export const CoursesService = {
     })
     return response.data
   },
+
+  async getCourses(id: { id: string }, cookie: any) {
+    const response = await apiForCourse.get(`course/${id.id}`, {
+      headers: {
+        Cookie: ['tokenAccess=' + cookie.tokenAccess, cookie.tokenRefresh],
+      },
+      data: cookie,
+    })
+    return response.data
+  },
 }

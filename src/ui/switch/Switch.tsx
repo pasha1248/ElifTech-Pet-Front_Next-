@@ -28,7 +28,7 @@ const Switch: FC<Props> = React.forwardRef(
             className='sr-only peer'
             type='checkbox'
             value={value}
-            onChange={e => {
+            onChange={(e) => {
               setChecked(e.target.checked)
             }}
           />
@@ -39,5 +39,7 @@ const Switch: FC<Props> = React.forwardRef(
     )
   }
 )
+
+Switch.displayName = 'Switch'
 
 export default Switch

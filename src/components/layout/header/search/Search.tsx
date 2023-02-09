@@ -8,6 +8,7 @@ import { useSearch } from '../../../../hooks/useSearch'
 import { useAppSelector } from '../../../../hooks/useReduxHooks'
 import cn from 'classnames'
 import SmallVideoItem from './smallIcon/SmallArticleItem'
+import LayoutForComponent from '../../../../ui/layout/LayoutForComponent'
 
 const Search: FC = () => {
   const { data, handleSearch, searchTerm, isSuccess } = useSearch()
@@ -31,9 +32,15 @@ const Search: FC = () => {
         />
       </label>
       {isSuccess && (
-        <div className={styles.result}>
+        <div className={cn(styles.result, { [styles.dark]: themeDark })}>
           {data?.length ? (
-            data.map((item) => <SmallVideoItem item={item} key={item.id} />)
+            data.map((item, id) => (
+              <div className={styles.item} key={item.id + id}>
+                <LayoutForComponent>
+                  <SmallVideoItem item={item} key={item.id} />
+                </LayoutForComponent>
+              </div>
+            ))
           ) : (
             <div className='text-white'>Article is not found</div>
           )}

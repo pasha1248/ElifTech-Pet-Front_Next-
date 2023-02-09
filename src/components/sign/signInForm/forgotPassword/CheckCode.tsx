@@ -1,14 +1,13 @@
 /** @format */
 
+import Link from 'next/link'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
-import { EMAIL_RULE } from '../../../common/const/Regex'
-import { AppRoute } from '../../../common/enums/app-routes.enum'
-import { useActions } from '../../../hooks/useActions'
-import { useAppSelector } from '../../../hooks/useReduxHooks'
-import Field from '../../../ui/fields/Field'
-import { Layout } from '../../layout/Layout'
+import { useActions } from '../../../../hooks/useActions'
+import { useAppSelector } from '../../../../hooks/useReduxHooks'
+import Field from '../../../../ui/fields/Field'
+import { AppRoute } from '../../../layout/sidebar/menu/menu.enum'
+
 import { IForgotPassword } from '../auth.interface'
 // @ts-ignore
 import styles from '../SignInForm.module.scss'
@@ -24,9 +23,9 @@ const CheckCode = () => {
 
   const { verifyCode } = useActions()
   const { accessChangePassword } = useAppSelector(
-    state => state.forgotPasswordSlice
+    (state) => state.forgotPasswordSlice
   )
-  const onSubmit: SubmitHandler<{ code: string }> = async data => {
+  const onSubmit: SubmitHandler<{ code: string }> = async (data) => {
     try {
       verifyCode(data)
     } catch (e) {
@@ -35,7 +34,7 @@ const CheckCode = () => {
   }
 
   return (
-    <Layout>
+    <div>
       {!accessChangePassword ? (
         <div className={styles.container}>
           <h2>Code check</h2>
@@ -53,7 +52,7 @@ const CheckCode = () => {
               })}
             />
             <div className={styles.forgotButtons}>
-              <Link to={AppRoute.HOME}>Back</Link>
+              <Link href={AppRoute.HOME}>Back</Link>
               <button>Send code</button>
             </div>
           </form>
@@ -61,7 +60,7 @@ const CheckCode = () => {
       ) : (
         <ChangePassword />
       )}
-    </Layout>
+    </div>
   )
 }
 

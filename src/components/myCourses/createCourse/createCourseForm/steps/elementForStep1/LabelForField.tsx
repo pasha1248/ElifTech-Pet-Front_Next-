@@ -7,15 +7,19 @@ import { Typography } from '../../../../../../ui/Typography'
 
 type Props = {
   label: string
+  necessary?: string
 }
 
-const LabelForField = ({ label }: Props) => {
+const LabelForField = ({ label, necessary }: Props) => {
   const { t } = useTranslation('myCourses')
 
   return (
     <label className='m-2 my-4 flex '>
       <RxDotFilled color='#F6BD61' />
-      <Typography type='Ag-18-semibold'>{t(label)}</Typography>
+      <Typography type='Ag-18-semibold'>
+        {t(label)}
+        {necessary && <span>{t(necessary)}</span>}
+      </Typography>
     </label>
   )
 }

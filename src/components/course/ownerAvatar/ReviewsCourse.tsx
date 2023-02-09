@@ -73,8 +73,8 @@ const ReviewsCourse = (props: Props) => {
           </Typography>
         </div>
         <div className='flex p-3 flex-wrap gap-0.3 w-full'>
-          {data.map((el) => (
-            <ItemReviews user={el} />
+          {data.map((el, id) => (
+            <ItemReviews user={el} key={el.name + id} />
           ))}
         </div>
         <hr />

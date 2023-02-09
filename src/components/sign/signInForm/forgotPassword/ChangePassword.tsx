@@ -1,16 +1,18 @@
 /** @format */
 
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
-import { Link, useNavigate } from 'react-router-dom'
-import { PASSWORD_RULE } from '../../../common/const/Regex'
-import { AppRoute } from '../../../common/enums/app-routes.enum'
-import { useActions } from '../../../hooks/useActions'
-import { useAppDispatch } from '../../../hooks/useReduxHooks'
-import { useShowPassword } from '../../../hooks/useShowPassword'
-import { accessChangeDisable } from '../../../state/slice/forgot-password/forgot.slice'
-import Field from '../../../ui/fields/Field'
+import { PASSWORD_RULE } from '../../../../common/const/Regex'
+import { useActions } from '../../../../hooks/useActions'
+import { useAppDispatch } from '../../../../hooks/useReduxHooks'
+import { useShowPassword } from '../../../../hooks/useShowPassword'
+import { accessChangeDisable } from '../../../../state/slice/forgot-password/forgot.slice'
+import Field from '../../../../ui/fields/Field'
+import { AppRoute } from '../../../layout/sidebar/menu/menu.enum'
+
 // @ts-ignorets-ignore
 import styles from '../SignInForm.module.scss'
 
@@ -18,7 +20,7 @@ interface Props {}
 
 const ChangePassword = (props: Props) => {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
+  const { push } = useRouter()
 
   const {
     register,
@@ -43,9 +45,9 @@ const ChangePassword = (props: Props) => {
   const onSubmit: SubmitHandler<{
     password: string
     confirmPassword: string
-  }> = async data => {
+  }> = async (data) => {
     try {
-      refreshPassword([data.password, navigate])
+      refreshPassword([data.password, push])
     } catch (e) {
       console.log(e)
     }
@@ -122,7 +124,7 @@ const ChangePassword = (props: Props) => {
         </div>
         <div className={styles.forgotButtons}>
           <Link
-            to={AppRoute.HOME}
+            href={AppRoute.HOME}
             onClick={() => dispatch(accessChangeDisable())}
           >
             Back

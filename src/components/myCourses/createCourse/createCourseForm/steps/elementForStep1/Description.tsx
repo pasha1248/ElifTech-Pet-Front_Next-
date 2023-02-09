@@ -9,9 +9,10 @@ import { useActions } from '../../../../../../hooks/useActions'
 interface Props {
   description: string
   error: string | boolean
+  long: boolean
 }
 
-const Description = ({ description, error }: Props) => {
+const Description = ({ description, long = false, error }: Props) => {
   const { setDescriptionForm } = useActions()
   return (
     <div>
@@ -21,6 +22,7 @@ const Description = ({ description, error }: Props) => {
         <TextArea
           onChange={setDescriptionForm}
           withEditor
+          long
           error={error}
           description={description}
         />

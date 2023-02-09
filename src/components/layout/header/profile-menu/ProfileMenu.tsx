@@ -13,11 +13,12 @@ import { api } from '../../../../state/api-rtk/api-rtk'
 import { AppRoute } from '../../../../common/enums/app-routes.enum'
 import { saveUserInStore } from '../../../../state/slice/user-slice/user.slice'
 import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {}
 
 const ProfileMenu = (props: Props) => {
-  const { user } = useAppSelector(state => state.authSlice)
+  const { user } = useAppSelector((state) => state.authSlice)
   const dispatch = useAppDispatch()
 
   const { data, isLoading } = api.useGetProfileQuery(null)
@@ -38,12 +39,18 @@ const ProfileMenu = (props: Props) => {
   return (
     <div ref={ref} className={styles.wrapper}>
       <button onClick={() => setIsShow(!isShow)}>
-        <img
+        <Image
+          loader={(src) =>
+            data?.avatarPath
+              ? data?.avatarPath
+              : 'http://cdn-icons-png.flaticon.com/512/147/147142.png'
+          }
           src={
             data?.avatarPath ||
             'http://cdn-icons-png.flaticon.com/512/147/147142.png'
           }
           alt={data?.firstName || 'avatar'}
+          unoptimized={true}
           width={60}
           height={60}
         />

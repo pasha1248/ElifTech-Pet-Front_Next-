@@ -25,7 +25,9 @@ export const FieldAutoComplate = forwardRef(
     let filteredPeople =
       selected === ''
         ? people
-        : people.filter(person => person.name.toLowerCase().replace(/\s+/g, ''))
+        : people.filter((person) =>
+            person.name.toLowerCase().replace(/\s+/g, '')
+          )
 
     return (
       <div className=' '>
@@ -67,3 +69,5 @@ export const FieldAutoComplate = forwardRef(
     )
   }
 )
+
+FieldAutoComplate.displayName = 'FieldAutoComplate'

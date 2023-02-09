@@ -1,0 +1,64 @@
+.item {
+  width: 100%;
+
+  background-color: transparent;
+  border-radius: 20px;
+
+  .item2 {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .button {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &:hover {
+      background-color: transparent;
+    }
+
+    .iconContainer {
+      padding: 5px;
+      background-color: #ecc94a;
+      border-radius: 50%;
+      color: rgb(42, 42, 42);
+    }
+
+    .icon {
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
+
+  // &:hover {
+  //   background-color: #faf8f6;
+  // }
+
+  div {
+    border: none;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
+.containerForLine {
+  &::after {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    content: ' ';
+    width: 5px;
+    align-items: center;
+    border-radius: 10px;
+    height: 30px;
+    left: 50%;
+    background-color: #ecc94a;
+    text-align: center;
+  }
+}

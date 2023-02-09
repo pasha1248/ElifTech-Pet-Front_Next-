@@ -16,11 +16,11 @@ import { RiLockPasswordLine } from 'react-icons/ri'
 import { useRouter } from 'next/router'
 import { useActions } from '../../../hooks/useActions'
 import { useShowPassword } from '../../../hooks/useShowPassword'
-import Field from '../../../ui/fields/Field'
 import { EMAIL_RULE, PASSWORD_RULE } from '../../../common/const/Regex'
 import Link from 'next/link'
 import { AppRoute } from '../../../common/enums/app-routes.enum'
 import ButtonAuth from '../../../ui/buttons/ButtonAuth'
+import Field from '../../../ui/fields/Field'
 
 interface Props {}
 
@@ -45,7 +45,7 @@ const SignInForm = (props: Props) => {
     visible: visible2,
   } = useShowPassword()
 
-  const onSubmit: SubmitHandler<IInputsSignIn> = async data => {
+  const onSubmit: SubmitHandler<IInputsSignIn> = async (data) => {
     try {
       signIn([data, push])
     } catch (e) {
@@ -120,10 +120,10 @@ const SignInForm = (props: Props) => {
               marginBottom: '1rem',
             }}
           >
-            <span className=''>
-              Don't have an account?
+            <span>
+              Do not have an account?
               <Link href={AppRoute.SIGN_UP} className={'ml-2'}>
-                Sign up{' '}
+                Sign up
               </Link>
             </span>
             <ButtonAuth type='submit'>
