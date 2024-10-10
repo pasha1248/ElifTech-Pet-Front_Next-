@@ -7,12 +7,13 @@
     @apply block relative;
 
     .input {
-      @apply py-2 px-10 w-full block outline-0 shadow-md;
-      border-radius: 20px;
-      background-color: #faf8f6;
+      @apply py-2 px-10 w-full block outline-0;
+      border-radius: 15px;
+      background-color: transparent;
       color: #5c5a69;
+
       transition: all 0.4s ease;
-      border: 1px solid transparent;
+      border: 3px solid transparent;
 
       &::placeholder {
         color: #5c5a69;
@@ -21,7 +22,7 @@
       &:focus,
       &:focus-visible {
         @apply shadow-2xl;
-        border: 1px solid #f6bd61;
+        border: 3px solid #f6bd61;
 
         outline: none;
       }
@@ -31,9 +32,9 @@
 
     .iconSearch {
       @apply absolute;
-      top: 9px;
+      top: 12px;
       left: 9px;
-      color: #5c5a69;
+      color: #f6bd61;
     }
   }
 }

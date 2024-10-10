@@ -1,0 +1,26 @@
+@import '../../../styles/constants.scss';
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $color2-white;
+  padding: 1rem;
+
+  // display: flex;
+  // justify-items: center;
+  // align-items: center;
+
+  .wrapperSingIn {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 2rem;
+  }
+}
+
+.wrapperBaner {
+}
+
+.dark {
+  background-color: $color2-dark;
+}

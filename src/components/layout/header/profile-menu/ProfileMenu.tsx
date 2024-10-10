@@ -51,8 +51,8 @@ const ProfileMenu = (props: Props) => {
           }
           alt={data?.firstName || 'avatar'}
           unoptimized={true}
-          width={60}
-          height={60}
+          width={50}
+          height={50}
         />
         {isShow ? <GoChevronUp /> : <GoChevronDown />}
       </button>

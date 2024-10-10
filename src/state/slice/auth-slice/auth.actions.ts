@@ -100,7 +100,7 @@ export const checkAuth = createAsyncThunk(
       return response
     } catch (error) {
       if (error instanceof AxiosError) {
-        // notifyError(error.response?.data?.message)
+        notifyError(error.response?.data?.message)
         return rejectWithValue(error.response?.data?.message)
       }
     }

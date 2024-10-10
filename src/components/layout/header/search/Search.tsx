@@ -25,11 +25,7 @@ const Search: FC = () => {
           value={searchTerm}
           onChange={handleSearch}
         />
-        <BiSearchAlt
-          className={styles.iconSearch}
-          color={`${themeDark ? 'white' : '#5c5a69'}`}
-          size={24}
-        />
+        <BiSearchAlt className={styles.iconSearch} size={24} />
       </label>
       {isSuccess && (
         <div className={cn(styles.result, { [styles.dark]: themeDark })}>

@@ -1,6 +1,5 @@
 /** @format */
 
-import { stat } from 'fs'
 import { createSlice } from '@reduxjs/toolkit'
 import {
   checkEmailAndSendCode,
@@ -22,9 +21,9 @@ const forgotPasswordSlice = createSlice({
       state.accessChangePassword = false
     },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(checkEmailAndSendCode.pending, state => {
+      .addCase(checkEmailAndSendCode.pending, (state) => {
         state.isLoading = true
       })
       .addCase(checkEmailAndSendCode.fulfilled, (state, action) => {
@@ -37,7 +36,7 @@ const forgotPasswordSlice = createSlice({
       })
     //
     builder
-      .addCase(checkEmailAndSendCodeAgain.pending, state => {
+      .addCase(checkEmailAndSendCodeAgain.pending, (state) => {
         state.isLoading = true
       })
       .addCase(checkEmailAndSendCodeAgain.fulfilled, (state, action) => {
@@ -49,7 +48,7 @@ const forgotPasswordSlice = createSlice({
     //
 
     builder
-      .addCase(verifyCode.pending, state => {
+      .addCase(verifyCode.pending, (state) => {
         state.isLoading = true
       })
       .addCase(verifyCode.fulfilled, (state, action) => {
@@ -62,7 +61,7 @@ const forgotPasswordSlice = createSlice({
       })
     //
     builder
-      .addCase(refreshPassword.pending, state => {
+      .addCase(refreshPassword.pending, (state) => {
         state.isLoading = true
       })
       .addCase(refreshPassword.fulfilled, (state, action) => {

@@ -80,6 +80,7 @@ const Step1General = ({
           error={
             showError && description.length < 60 && 'eroorMessageForDescription'
           }
+          long={false}
         />
       </div>
       <div>

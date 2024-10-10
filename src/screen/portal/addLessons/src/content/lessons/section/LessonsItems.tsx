@@ -16,6 +16,7 @@ const LessonsItems = ({ course }: Props) => {
             course={el}
             totalCount={course?.sections.length}
             number={id + 1}
+            key={el}
           />
         ))
       ) : (

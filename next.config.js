@@ -26,6 +26,7 @@ module.exports = {
   i18n,
   swcMinify: true,
   optimizeFonts: true,
+  // concurrentFeatures: true,
 
   images: {
     remotePatterns: [
@@ -36,6 +37,10 @@ module.exports = {
       {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
       },
     ],
 

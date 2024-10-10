@@ -1,3 +1,4 @@
+import { Skeleton } from '@chakra-ui/react'
 import React from 'react'
 import LayoutForComponent from '../../../ui/layout/LayoutForComponent'
 import ItemCourse from '../../dashboard/my-course/ItemCourse'
@@ -12,11 +13,13 @@ const MyCourseItems = ({ courses }: Props) => {
   console.log(courses)
   return (
     <div className={styles.container}>
-      {courses?.map((el: ICourse) => (
-        <LayoutForComponent key={el.id}>
-          <ItemCourse item={el} withRating />
-        </LayoutForComponent>
-      ))}
+      {!courses
+        ? [...Array(15)].map((el, id) => <Skeleton key={id} height='20px' />)
+        : courses.map((el: ICourse) => (
+            <LayoutForComponent key={el.id}>
+              <ItemCourse item={el} withRating />
+            </LayoutForComponent>
+          ))}
     </div>
   )
 }

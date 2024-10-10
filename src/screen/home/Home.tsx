@@ -8,12 +8,12 @@ import Sidebar from '../../components/layout/sidebar/Sidebar'
 interface Props {}
 
 const Home = (props: Props) => {
-  // const { t: translate } = useTranslation('dashboard')
+  const { t: translate } = useTranslation('dashboard')
 
   return (
     <div>
       <Layout title='Home Page' withSidebar={false}>
-        {/* <div> {translate('menu')}</div> */}
+        <div> {translate('menu')}</div>
       </Layout>
     </div>
   )

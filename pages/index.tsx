@@ -16,15 +16,29 @@ import { checkAuth } from '../src/state/slice/auth-slice/auth.actions'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// import { useEffect } from 'react'
+// import { useRouter } from 'next/router'
+// import { useAppSelector } from '../src/hooks/useReduxHooks'
+// import { useActions } from '../src/hooks/useActions'
+
 const HomePage: NextPage<any> = () => {
   const { isAuth } = useAppSelector((state) => state.authSlice)
-  const { checkAuth } = useActions()
+  const actions = useActions()
+  const router = useRouter()
 
-  const { locale, locales, push } = useRouter()
+  useEffect(() => {
+    // Dispatch the action to check if the user is authenticated
+    actions.checkAuth()
 
-  const handle = (l: any) => {
-    push('/', undefined, { locale: l })
-  }
+    // Depending on the authentication status, redirect the user
+    if (isAuth) {
+      router.push('/dashboard')
+    } else {
+      router.push('/sign-in')
+    }
+
+    // Add `isAuth` to the dependency array so this effect runs when `isAuth` changes
+  }, [isAuth, actions, router])
 
   return (
     <>
@@ -35,7 +49,9 @@ const HomePage: NextPage<any> = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
-        <Home />
+        <div style={{ overflow: 'hidden' }}>
+          <Home />
+        </div>
       </main>
     </>
   )

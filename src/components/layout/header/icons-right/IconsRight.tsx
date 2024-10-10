@@ -27,7 +27,7 @@ const IconsRight = (props: Props) => {
     <LayoutForComponent>
       <div className='flex justify-between items-center'>
         <div>
-          <Typography type='h3' className='text-2xl font-mono'>
+          <Typography type='h3' className='text-xl font-mono'>
             {`${data?.firstName} ${data?.lastName} `}
           </Typography>
         </div>
@@ -39,7 +39,7 @@ const IconsRight = (props: Props) => {
                 <Link href={AppRoute.CART}>
                   <FaShoppingCart
                     color={`${themeDark ? '#F1F1F2' : '#1C1D1F'}`}
-                    size={30}
+                    size={25}
                     className={'cursor-pointer'}
                   />
                 </Link>
@@ -47,7 +47,7 @@ const IconsRight = (props: Props) => {
               <div className='mr-5'>
                 <IoNotifications
                   color={`${themeDark ? '#F1F1F2' : '#1C1D1F'}`}
-                  size={30}
+                  size={25}
                   className={'cursor-pointer'}
                 />
               </div>

@@ -1,15 +1,17 @@
 /** @format */
+@import '../../../../styles/constants.scss';
 
 .container {
   text-align: center;
-  margin-left: 6rem;
-  margin-right: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h2 {
     font-size: 30px;
     font-weight: 800;
     color: white;
-    margin: 2rem;
+    // margin: 2rem;
     margin-bottom: 2rem;
   }
   .form {
@@ -21,17 +23,17 @@
 }
 
 .containerForPasswordField {
-  position: relative;
-
   .eye {
+    position: relative;
+
     .eyeIcon {
       cursor: pointer;
       transition: all 0.2s ease;
       position: absolute;
-      right: 10px;
-      bottom: 20px;
+      right: 15px;
+      bottom: 10px;
       font-size: 30px;
-      color: whitesmoke;
+      color: $color1-white;
 
       &:hover {
         color: grey;
