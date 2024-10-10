@@ -25,7 +25,7 @@ const AddLessonForm = (props: Props) => {
           </div>
         </div>
 
-        <Description long />
+        <Description long description={''} error={''} />
       </div>
       <div className={styles.rightSide}>
         <AddVideoFromYoutube />

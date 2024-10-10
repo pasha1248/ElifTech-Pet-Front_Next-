@@ -2,8 +2,9 @@
 
 .container {
   text-align: center;
-  margin-left: 6rem;
-  margin-right: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h2 {
     font-size: 30px;
@@ -16,7 +17,6 @@
   .form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     position: relative;
   }
 
@@ -41,15 +41,15 @@
 }
 
 .containerForPasswordField {
-  position: relative;
-
   .eye {
+    position: relative;
+
     .eyeIcon {
       cursor: pointer;
       transition: all 0.2s ease;
       position: absolute;
-      right: 10px;
-      bottom: 20px;
+      right: 15px;
+      bottom: 10px;
       font-size: 30px;
       color: whitesmoke;
 

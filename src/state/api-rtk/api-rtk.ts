@@ -1,7 +1,5 @@
 /** @format */
 
-import { RootState } from './../store'
-
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { IUser } from '../slice/user-slice/user.interface'
 

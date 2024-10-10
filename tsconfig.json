@@ -21,7 +21,8 @@
     "**/*.tsx",
     "next-i18next.config.js",
     "src/ui/carousel/chakraCarousel/CarouselChakra.jsx",
-    "src/ui/carousel/CarouselCustom.jsx"
+    "src/ui/carousel/CarouselCustom.jsx",
+    "src/components/dashboard/baner/slider/SliderBaner.jsx"
   ],
   "exclude": ["node_modules"]
 }

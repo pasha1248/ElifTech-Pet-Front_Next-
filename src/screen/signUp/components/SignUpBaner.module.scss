@@ -1,0 +1,11 @@
+@import '../../../../styles/constants.scss';
+.baner {
+  background-color: $color1-white;
+  // box-shadow: $color1-white 0px 7px 29px 2px;
+  // box-shadow: 10px 10px 10px $color1-white;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  height: 96vh;
+  width: 100%;
+}

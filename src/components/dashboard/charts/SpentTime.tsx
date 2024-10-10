@@ -79,9 +79,9 @@ const SpentTime = () => {
     ],
   }
   return (
-    <div className=''>
+    <div>
       <LayoutForComponent small>
-        <div style={{ height: '300px', paddingBottom: '20px' }}>
+        <div style={{ height: '150px' }} className='mb-10'>
           <Typography type='h3' className='text-xl'>
             {locale !== 'en' ? 'Проведено часу' : 'Spent time'}
           </Typography>

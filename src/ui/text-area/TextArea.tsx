@@ -34,7 +34,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, ITextArea>(
         setValue(value)
         onChange(value)
       },
-      [value, onChange]
+      [onChange]
     )
 
     const autofocusNoSpellcheckerOptions = useMemo(() => {

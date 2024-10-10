@@ -12,7 +12,6 @@ import {
   notifyError,
   notifySuccess,
 } from '../../../common/notifications/notifications'
-import { IForgotPassword } from '../../../components/signInForm/auth.interface'
 import { AuthServiceFront } from '../../../services/auth/auth.services'
 import { AppRoute } from '../../../common/enums/app-routes.enum'
 import { toast } from 'react-toastify'

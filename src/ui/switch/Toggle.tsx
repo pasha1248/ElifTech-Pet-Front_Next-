@@ -10,7 +10,7 @@ const Toggle = () => {
   const dispatch = useAppDispatch()
 
   return (
-    <div className='py-16'>
+    <div className=''>
       <Stack direction='row'>
         <Switch
           colorScheme='orange'

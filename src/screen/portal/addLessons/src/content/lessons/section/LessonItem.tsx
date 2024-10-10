@@ -29,6 +29,7 @@ const LessonItem = ({ course, number, totalCount }: Props) => {
   const { themeDark } = useAppSelector((state) => state.changeThemeSlice)
 
   const { isOpen, onClose, onOpen } = useDisclosure()
+  console.log('hello')
 
   return (
     <div className={`${totalCount !== number && styles.containerForLine}`}>

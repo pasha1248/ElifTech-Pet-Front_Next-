@@ -8,11 +8,7 @@ import { CoursesService } from '../../src/services/courses/courses.service'
 interface Props {}
 
 const Dashboard: NextPageAuth = (props: Props) => {
-  return (
-    <div>
-      <DashboardPage />
-    </div>
-  )
+  return <div>{<DashboardPage />}</div>
 }
 
 export const getServerSideProps = async (option: any) => {

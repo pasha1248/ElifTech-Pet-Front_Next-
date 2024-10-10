@@ -11,6 +11,7 @@
   transition: all 0.3s ease;
 
   .fixed {
+    max-height: 90%;
   }
   .logo {
     @apply text-2xl font-semibold flex justify-center;

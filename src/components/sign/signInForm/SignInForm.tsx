@@ -55,89 +55,90 @@ const SignInForm = (props: Props) => {
 
   return (
     <div className={styles.container}>
-      <h2>Sign in</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <div>
-          <h3 className='text-start m-2 text-xl text-slate-50 font-semibold	'>
-            Email
-          </h3>
-          <Field
-            type='text'
-            placeholder='Email'
-            error={errors.email}
-            {...register('email', {
-              required: 'Email is required',
-              minLength: 3,
-              pattern: {
-                value: EMAIL_RULE,
-                message: 'Email must be correct',
-              },
-            })}
-          >
-            <AiOutlineMail />
-          </Field>
-        </div>
-        <div className={styles.containerForPasswordField}>
-          <h3 className='text-start m-2 text-xl text-slate-50 font-semibold	'>
-            Password
-          </h3>
+      <div>
+        <h2>Sign in</h2>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div>
+            <h3 className='text-start m-2 text-xl text-slate-50 font-semibold	'>
+              Email
+            </h3>
+            <Field
+              type='text'
+              placeholder='Email'
+              error={errors.email}
+              {...register('email', {
+                required: 'Email is required',
+                minLength: 3,
+                pattern: {
+                  value: EMAIL_RULE,
+                  message: 'Email must be correct',
+                },
+              })}
+            >
+              <AiOutlineMail className='text-color1-white' />
+            </Field>
+          </div>
+          <div className={styles.containerForPasswordField}>
+            <h3 className='text-start m-2 text-xl text-slate-50 font-semibold	'>
+              Password
+            </h3>
+            <div className={styles.eye}>
+              <Field
+                type={visible}
+                placeholder='Password'
+                error={errors.password}
+                {...register('password', {
+                  required: 'Password is required',
+                  minLength: 8,
+                  pattern: {
+                    value: PASSWORD_RULE,
+                    message: 'Password password must be stronger',
+                  },
+                })}
+              >
+                <RiLockPasswordLine className='text-color1-white' />
+              </Field>
+              {visible === 'password' ? (
+                <AiFillEye onClick={makeVisible} className={styles.eyeIcon} />
+              ) : (
+                <AiFillEyeInvisible
+                  onClick={makeNotVisible}
+                  className={styles.eyeIcon}
+                />
+              )}
+            </div>
+          </div>
+          <span className={styles.forgotButtons}>
+            <Link href={AppRoute.FORGOT_PASSWORD}>Forgot password ? </Link>
+          </span>
+          <div className={styles.buttons}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '1rem',
+              }}
+            >
+              <span>
+                Do not have an account?
+                <Link href={AppRoute.SIGN_UP} className={'ml-2'}>
+                  Sign up
+                </Link>
+              </span>
+              <ButtonAuth type='submit'>
+                Login
+                <BsFillArrowRightCircleFill className='ml-2' size={20} />
+              </ButtonAuth>
+            </div>
+            <span className={styles.line}>or</span>
 
-          <Field
-            type={visible}
-            placeholder='Password'
-            error={errors.password}
-            {...register('password', {
-              required: 'Password is required',
-              minLength: 8,
-              pattern: {
-                value: PASSWORD_RULE,
-                message: 'Password password must be stronger',
-              },
-            })}
-          >
-            <RiLockPasswordLine />
-          </Field>
-          <div className={styles.eye}>
-            {visible === 'password' ? (
-              <AiFillEye onClick={makeVisible} className={styles.eyeIcon} />
-            ) : (
-              <AiFillEyeInvisible
-                onClick={makeNotVisible}
-                className={styles.eyeIcon}
-              />
-            )}
+            <div className={styles.googleButton}>
+              {<GoogleButton /> ? <GoogleButton /> : "You don't have internet"}
+            </div>
           </div>
-        </div>
-        <span className={styles.forgotButtons}>
-          <Link href={AppRoute.FORGOT_PASSWORD}>Forgot password ? </Link>
-        </span>
-        <div className={styles.buttons}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '1rem',
-            }}
-          >
-            <span>
-              Do not have an account?
-              <Link href={AppRoute.SIGN_UP} className={'ml-2'}>
-                Sign up
-              </Link>
-            </span>
-            <ButtonAuth type='submit'>
-              Login
-              <BsFillArrowRightCircleFill className='ml-2' size={20} />
-            </ButtonAuth>
-          </div>
-          <span className={styles.line}>or</span>
-
-          <div className={styles.googleButton}>
-            {<GoogleButton /> ? <GoogleButton /> : "You don't have internet"}
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   )
 }

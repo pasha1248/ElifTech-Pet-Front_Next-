@@ -6,13 +6,14 @@ import React from 'react'
 import baner from '../../../../public/image/baner.jpg'
 import { Typography } from '../../../ui/Typography'
 import styles from './Baner.module.scss'
+import { CitiesSlider, slides } from './slider/SliderBaner'
 
 interface Props {}
 
 const Baner = (props: Props) => {
   return (
     <div className={styles.wrapper}>
-      <Image
+      {/* <Image
         src={baner}
         alt={'baner'}
         className={'rounded-3xl h-[200px]'}
@@ -28,7 +29,8 @@ const Baner = (props: Props) => {
           This section for our news
         </Typography>
         <button></button>
-      </div>
+      </div> */}
+      <CitiesSlider slides={slides} />
     </div>
   )
 }
